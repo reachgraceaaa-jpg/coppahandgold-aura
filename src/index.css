@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Italiana&family=Jost:wght@200;300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -81,6 +81,12 @@
   }
   .muted-text {
     color: rgba(240, 237, 232, 0.55);
+  }
+  .brand-mark {
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
   }
 
   /* Grain overlay */

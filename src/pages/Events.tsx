@@ -72,7 +72,20 @@ const Events = () => {
       {/* Event cards */}
       <section className="px-8 md:px-14 pb-[120px]">
         <div className="max-w-5xl mx-auto space-y-6">
-          {events.map((e, i) => (
+          {events.map((e, i) => {
+            const glowTones = [
+              "rgba(0,229,200,0.18)",   // teal
+              "rgba(201,132,122,0.22)", // blush
+              "rgba(220,220,220,0.14)", // silver
+            ];
+            const glowEdges = [
+              "rgba(0,229,200,0.45)",
+              "rgba(201,132,122,0.5)",
+              "rgba(220,220,220,0.35)",
+            ];
+            const tone = glowTones[i % glowTones.length];
+            const edge = glowEdges[i % glowEdges.length];
+            return (
             <article
               key={e.name}
               className="group relative p-10 transition-all duration-500 reveal overflow-hidden"
@@ -82,9 +95,21 @@ const Events = () => {
                 transitionDelay: `${i * 80}ms`,
               }}
             >
+              {/* Top-right tone glow */}
               <div
-                className="absolute inset-0 pointer-events-none transition-opacity duration-500"
-                style={{ background: "radial-gradient(circle at 95% 5%, rgba(201,132,122,0.06), transparent 50%)" }}
+                className="absolute -top-16 -right-16 w-56 h-56 rounded-full pointer-events-none transition-opacity duration-700 opacity-80 group-hover:opacity-100"
+                style={{
+                  background: `radial-gradient(circle, ${tone} 0%, transparent 65%)`,
+                  filter: "blur(8px)",
+                }}
+              />
+              <div
+                className="absolute top-0 right-0 w-24 h-px pointer-events-none"
+                style={{ background: `linear-gradient(to left, ${edge}, transparent)` }}
+              />
+              <div
+                className="absolute top-0 right-0 w-px h-24 pointer-events-none"
+                style={{ background: `linear-gradient(to bottom, ${edge}, transparent)` }}
               />
               <div className="absolute inset-0 pointer-events-none border opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ borderColor: "rgba(0,229,200,0.4)" }} />
 
@@ -128,7 +153,8 @@ const Events = () => {
                 )}
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
