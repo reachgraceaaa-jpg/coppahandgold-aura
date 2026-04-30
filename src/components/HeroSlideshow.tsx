@@ -56,32 +56,36 @@ const HeroSlideshow = () => {
               "radial-gradient(circle at 80% 20%, rgba(0,229,200,0.10), transparent 50%), radial-gradient(circle at 15% 85%, rgba(201,132,122,0.12), transparent 55%)",
           }}
         />
-        <div className="relative h-full flex flex-col justify-center px-8 md:px-20 pt-24 pb-20 max-w-6xl mx-auto">
-          <div className="label-teal mb-8">WHAT'S IN THE ROOM</div>
-          <h2 className="serif text-foreground mb-12" style={{ fontWeight: 300, fontSize: "clamp(2rem, 4vw, 3.4rem)" }}>
-            A season of rooms,<br /><span className="italic-serif text-primary">carefully made.</span>
+        <div className="relative h-full flex flex-col justify-center items-center px-8 md:px-14 pt-24 pb-20 max-w-7xl mx-auto">
+          <div className="label-teal mb-6 text-center">WHAT'S COMING</div>
+          <h2 className="serif text-foreground mb-16 text-center" style={{ fontWeight: 300, fontSize: "clamp(2.6rem, 5.5vw, 4.6rem)", lineHeight: 1 }}>
+            The rooms <span className="italic-serif text-primary">ahead.</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
-            <WeekCalendar
-              weekLabel="Week of April 21"
-              rangeLabel="Apr 21 — Apr 27, 2025"
-              active
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 w-full">
+            <MonthCalendar
+              monthName="April"
+              year={2025}
+              monthIndex={3}
+              events={[{ start: 21, end: 27, label: "Cones & Code", tone: "blush" }]}
+            />
+            <MonthCalendar
+              monthName="May"
+              year={2025}
+              monthIndex={4}
               events={[
-                { start: 5, span: 1, label: "Cones & Code", tone: "teal" },
-                { start: 2, span: 2, label: "Studio Hours", tone: "blush" },
-                { start: 0, span: 1, label: "Welcome Call", tone: "silver" },
+                { start: 5, end: 11, label: "Tennis Classic", tone: "teal" },
+                { start: 19, end: 24, label: "Sunset Sessions", tone: "blush" },
+                { start: 26, end: 31, label: "Auto Zen", tone: "silver" },
               ]}
             />
-            <WeekCalendar
-              weekLabel="Week of May 5"
-              rangeLabel="May 5 — May 11, 2025"
-              events={[
-                { start: 6, span: 1, label: "Sunset Sessions", tone: "teal" },
-                { start: 3, span: 2, label: "Tennis Classic", tone: "blush" },
-                { start: 1, span: 1, label: "Auto Zen", tone: "silver" },
-              ]}
+            <MonthCalendar
+              monthName="June"
+              year={2025}
+              monthIndex={5}
+              events={[{ start: 2, end: 8, label: "Hyrox Festival", tone: "teal" }]}
             />
           </div>
+          <a href="/events" className="btn-teal-outline btn-pulse mt-14">See What's Coming →</a>
         </div>
       </div>
 
