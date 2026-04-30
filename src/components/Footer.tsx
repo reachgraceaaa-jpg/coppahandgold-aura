@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => (
   <footer className="border-t border-primary/10 px-8 md:px-14 py-12">
     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-      <Link to="/" className="brand-mark text-lg text-foreground">
+      <Link to="/" className="brand-mark text-lg">
         COPPAHANDGOLD
       </Link>
       <p className="muted-text text-xs italic-serif text-center max-w-md">

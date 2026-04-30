@@ -6,7 +6,7 @@ const Navigation = () => {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-transparent pointer-events-none" />
       <nav className="relative flex items-center justify-between px-8 md:px-14 py-6">
-        <Link to="/" className="brand-mark text-xl md:text-2xl text-foreground">
+        <Link to="/" className="brand-mark text-xl md:text-2xl">
           COPPAHANDGOLD
         </Link>
         <div className="hidden md:flex items-center gap-10 text-xs uppercase tracking-[0.28em]" style={{ fontFamily: "Jost", fontWeight: 300 }}>
