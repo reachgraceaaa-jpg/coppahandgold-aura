@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-1.jpg";
-import WeekCalendar from "./WeekCalendar";
+import MonthCalendar from "./MonthCalendar";
 
 const HeroSlideshow = () => {
   const [slide, setSlide] = useState(0);
