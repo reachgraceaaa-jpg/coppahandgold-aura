@@ -82,6 +82,12 @@
   .muted-text {
     color: rgba(240, 237, 232, 0.55);
   }
+  .brand-mark {
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
 
   /* Grain overlay */
   .grain-overlay {
