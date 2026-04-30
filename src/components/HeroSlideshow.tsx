@@ -62,8 +62,25 @@ const HeroSlideshow = () => {
             A season of rooms,<br /><span className="italic-serif text-primary">carefully made.</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
-            <Calendar monthName="April" year={2025} monthIndex={3} highlighted={[26]} active />
-            <Calendar monthName="May" year={2025} monthIndex={4} highlighted={[10, 17, 24]} />
+            <WeekCalendar
+              weekLabel="Week of April 21"
+              rangeLabel="Apr 21 — Apr 27, 2025"
+              active
+              events={[
+                { start: 5, span: 1, label: "Cones & Code", tone: "teal" },
+                { start: 2, span: 2, label: "Studio Hours", tone: "blush" },
+                { start: 0, span: 1, label: "Welcome Call", tone: "silver" },
+              ]}
+            />
+            <WeekCalendar
+              weekLabel="Week of May 5"
+              rangeLabel="May 5 — May 11, 2025"
+              events={[
+                { start: 6, span: 1, label: "Sunset Sessions", tone: "teal" },
+                { start: 3, span: 2, label: "Tennis Classic", tone: "blush" },
+                { start: 1, span: 1, label: "Auto Zen", tone: "silver" },
+              ]}
+            />
           </div>
         </div>
       </div>
