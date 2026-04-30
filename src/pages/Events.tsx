@@ -153,7 +153,8 @@ const Events = () => {
                 )}
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
