@@ -1,18 +1,31 @@
+import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-1.jpg";
 import MonthCalendar from "./MonthCalendar";
 
+const SLIDE_MS = 4000;
+
 const HeroSlideshow = () => {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setSlide((s) => (s + 1) % 2), SLIDE_MS);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Background image with smooth blending */}
-      <div className="absolute inset-0">
+      {/* SLIDE 1 — Brand image */}
+      <div
+        className="absolute inset-0 transition-opacity duration-[1400ms] ease-in-out"
+        style={{ opacity: slide === 0 ? 1 : 0 }}
+      >
         <img
           src={heroImg}
           alt="A woman in an architectural space"
           className="w-full h-full object-cover"
           style={{ filter: "brightness(0.78) saturate(0.85) contrast(0.95)" }}
         />
-        {/* Soft tonal wash to match site bg */}
+        {/* Smooth tonal blend into site bg */}
         <div
           className="absolute inset-0"
           style={{
@@ -20,7 +33,6 @@ const HeroSlideshow = () => {
               "linear-gradient(180deg, rgba(8,10,9,0.55) 0%, rgba(8,10,9,0.35) 35%, rgba(8,10,9,0.55) 70%, rgba(8,10,9,0.92) 100%)",
           }}
         />
-        {/* Edge vignette to blend into surrounding sections */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -28,7 +40,6 @@ const HeroSlideshow = () => {
               "radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(8,10,9,0.55) 80%, rgba(8,10,9,0.95) 100%)",
           }}
         />
-        {/* Color glows */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -36,13 +47,11 @@ const HeroSlideshow = () => {
               "radial-gradient(circle at 90% 95%, rgba(0,229,200,0.10), transparent 45%), radial-gradient(circle at 8% 92%, rgba(201,132,122,0.18), transparent 45%)",
           }}
         />
-      </div>
 
-      {/* Hero content */}
-      <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-[1fr_auto] items-end gap-12 px-8 md:pl-[60px] md:pr-12 pb-16 md:pb-[90px]">
+        {/* Brand content */}
         <div
-          className="max-w-4xl animate-fade-in"
-          style={{ animationDelay: "0.5s", opacity: 0 }}
+          className="absolute left-0 right-0 bottom-0 px-8 md:pl-[60px] md:pr-12 pb-16 md:pb-[100px] max-w-4xl animate-fade-in"
+          style={{ animationDelay: "0.5s" }}
         >
           <div className="label-teal mb-6">CIRCLE — A COPPAHANDGOLD EXPERIENCE</div>
           <h1
@@ -63,35 +72,70 @@ const HeroSlideshow = () => {
             <a href="/events" className="ghost-link">See Events ↓</a>
           </div>
         </div>
+      </div>
 
-        {/* Calendar slideshow */}
+      {/* SLIDE 2 — Content calendar */}
+      <div
+        className="absolute inset-0 transition-opacity duration-[1400ms] ease-in-out"
+        style={{ opacity: slide === 1 ? 1 : 0 }}
+      >
+        {/* Soft atmospheric bg to match site */}
+        <div className="absolute inset-0 bg-background" />
         <div
-          className="hidden lg:block animate-fade-in"
-          style={{ animationDelay: "0.9s", opacity: 0 }}
-        >
-          <div
-            className="p-7 rounded-sm backdrop-blur-sm"
-            style={{
-              background: "rgba(8,10,9,0.55)",
-              border: "1px solid rgba(0,229,200,0.18)",
-              boxShadow: "0 0 40px rgba(0,0,0,0.5)",
-            }}
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle at 15% 20%, rgba(201,132,122,0.10), transparent 50%), radial-gradient(circle at 85% 85%, rgba(0,229,200,0.08), transparent 55%)",
+          }}
+        />
+
+        <div className="relative h-full flex flex-col justify-center items-center px-8 py-20">
+          <div className="label-teal mb-3">WHAT'S IN THE ROOM</div>
+          <h2
+            className="serif italic-serif text-foreground text-center mb-12"
+            style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.5vw, 3rem)" }}
           >
-            <div className="label-teal mb-4 text-center" style={{ fontSize: "0.62rem" }}>
-              WHAT'S IN THE ROOM
-            </div>
+            The next rooms.
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+            <MonthCalendar
+              monthName="April"
+              year={2026}
+              monthIndex={3}
+              events={[
+                { start: 11, end: 12, label: "Circle — Opening Night", tone: "teal" },
+                { start: 25, end: 25, label: "Move — Atelier Series", tone: "blush" },
+              ]}
+            />
             <MonthCalendar
               monthName="May"
               year={2026}
               monthIndex={4}
               events={[
-                { start: 9, end: 10, label: "Circle — Opening Night", tone: "teal" },
+                { start: 9, end: 10, label: "Gather — Salon No. 03", tone: "teal" },
                 { start: 16, end: 17, label: "Move — Atelier Series", tone: "blush" },
                 { start: 23, end: 24, label: "Expand — Private Salon", tone: "silver" },
               ]}
             />
           </div>
         </div>
+      </div>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+        {[0, 1].map((i) => (
+          <button
+            key={i}
+            onClick={() => setSlide(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className="h-px transition-all duration-500"
+            style={{
+              width: slide === i ? 36 : 18,
+              background: slide === i ? "hsl(var(--primary))" : "rgba(240,237,232,0.35)",
+            }}
+          />
+        ))}
       </div>
     </section>
   );
