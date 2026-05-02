@@ -4,7 +4,7 @@ interface MonthEvent {
   /** day-of-month end inclusive (1-indexed) */
   end: number;
   label: string;
-  tone?: "teal" | "blush" | "silver";
+  tone?: "teal" | "blush" | "silver" | "green" | "mauve" | "brown";
 }
 
 interface MonthCalendarProps {
@@ -33,11 +33,32 @@ const tonePalette = {
     glow: "0 0 14px rgba(201,132,122,0.28)",
   },
   silver: {
-    bg: "rgba(220,220,220,0.14)",
-    border: "rgba(220,220,220,0.40)",
-    text: "rgba(240,237,232,0.85)",
-    dot: "rgba(240,237,232,0.7)",
-    glow: "0 0 14px rgba(240,237,232,0.14)",
+    bg: "rgba(150,160,170,0.32)",
+    border: "rgba(180,190,200,0.45)",
+    text: "rgba(240,237,232,0.9)",
+    dot: "rgba(180,190,200,0.85)",
+    glow: "0 0 14px rgba(180,190,200,0.18)",
+  },
+  green: {
+    bg: "rgba(74,110,80,0.78)",
+    border: "rgba(90,130,95,0.85)",
+    text: "rgba(240,237,232,0.95)",
+    dot: "rgba(90,130,95,0.95)",
+    glow: "0 0 14px rgba(74,110,80,0.35)",
+  },
+  mauve: {
+    bg: "rgba(150,100,110,0.62)",
+    border: "rgba(170,115,125,0.75)",
+    text: "rgba(240,237,232,0.95)",
+    dot: "rgba(170,115,125,0.95)",
+    glow: "0 0 14px rgba(150,100,110,0.30)",
+  },
+  brown: {
+    bg: "rgba(130,95,75,0.72)",
+    border: "rgba(150,110,85,0.80)",
+    text: "rgba(240,237,232,0.95)",
+    dot: "rgba(150,110,85,0.95)",
+    glow: "0 0 14px rgba(130,95,75,0.30)",
   },
 } as const;
 
