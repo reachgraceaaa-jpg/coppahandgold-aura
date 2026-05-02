@@ -45,20 +45,6 @@ const Index = () => {
       <Navigation />
       <HeroSlideshow />
 
-      {/* Content Calendar */}
-      <section className="px-8 md:px-14 py-[120px]">
-        <div className="max-w-6xl mx-auto reveal">
-          <div className="label-teal mb-8">WHAT'S IN THE ROOM</div>
-          <h2 className="serif mb-14 max-w-3xl" style={{ fontWeight: 300, fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.05 }}>
-            A season designed around <span className="italic-serif text-primary">feeling</span>, not formula.
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Calendar monthName="April" year={2025} monthIndex={3} highlighted={[26]} active />
-            <Calendar monthName="May" year={2025} monthIndex={4} highlighted={[10, 17, 24]} />
-          </div>
-        </div>
-      </section>
-
       {/* Manifesto strip */}
       <section
         className="relative border-t border-b py-[90px] px-8 text-center overflow-hidden"
