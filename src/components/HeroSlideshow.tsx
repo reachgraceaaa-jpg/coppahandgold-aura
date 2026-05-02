@@ -89,23 +89,23 @@ const HeroSlideshow = () => {
           }}
         />
 
-        <div className="relative h-full flex flex-col justify-center items-center px-8 py-20">
-          <div className="label-teal mb-3">WHAT'S IN THE ROOM</div>
+        <div className="relative h-full flex flex-col justify-center items-center px-8 py-16 overflow-y-auto">
+          <div className="label-teal mb-4">WHAT'S COMING</div>
           <h2
-            className="serif italic-serif text-foreground text-center mb-12"
-            style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.5vw, 3rem)" }}
+            className="serif text-foreground text-center mb-14"
+            style={{ fontWeight: 300, fontSize: "clamp(2.2rem, 4vw, 3.4rem)", lineHeight: 1.05 }}
           >
-            The next rooms.
+            The rooms <span className="italic-serif text-primary">ahead.</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 w-full max-w-6xl">
             <MonthCalendar
               monthName="April"
               year={2026}
               monthIndex={3}
               events={[
-                { start: 11, end: 12, label: "Circle — Opening Night", tone: "teal" },
-                { start: 25, end: 25, label: "Move — Atelier Series", tone: "blush" },
+                { start: 21, end: 26, label: "Cones & Code", tone: "mauve" },
+                { start: 27, end: 27, label: "Cones & Code", tone: "mauve" },
               ]}
             />
             <MonthCalendar
@@ -113,12 +113,30 @@ const HeroSlideshow = () => {
               year={2026}
               monthIndex={4}
               events={[
-                { start: 9, end: 10, label: "Gather — Salon No. 03", tone: "teal" },
-                { start: 16, end: 17, label: "Move — Atelier Series", tone: "blush" },
-                { start: 23, end: 24, label: "Expand — Private Salon", tone: "silver" },
+                { start: 5, end: 10, label: "Tennis Classic", tone: "green" },
+                { start: 11, end: 11, label: "Tennis Classic", tone: "green" },
+                { start: 19, end: 24, label: "Sunset Sessions", tone: "brown" },
+                { start: 25, end: 25, label: "Auto Zen", tone: "silver" },
+                { start: 26, end: 31, label: "Auto Zen", tone: "silver" },
+              ]}
+            />
+            <MonthCalendar
+              monthName="June"
+              year={2026}
+              monthIndex={5}
+              events={[
+                { start: 2, end: 7, label: "Hyrox Festival", tone: "green" },
+                { start: 8, end: 8, label: "Hyrox Festival", tone: "green" },
               ]}
             />
           </div>
+
+          <a
+            href="/events"
+            className="btn-teal-outline btn-pulse mt-14"
+          >
+            See What's Coming →
+          </a>
         </div>
       </div>
 
