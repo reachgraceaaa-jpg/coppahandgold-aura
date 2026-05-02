@@ -52,7 +52,7 @@ const Index = () => {
       >
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(circle at 50% 50%, rgba(0,229,200,0.04), transparent 60%)" }}
+          style={{ background: "radial-gradient(circle at 30% 50%, rgba(201,132,122,0.07), transparent 55%), radial-gradient(circle at 75% 50%, rgba(0,229,200,0.04), transparent 60%)" }}
         />
         <p className="relative italic-serif max-w-[760px] mx-auto reveal" style={{ fontWeight: 300, fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)", lineHeight: 1.4 }}>
           We don't sell experiences. We <span className="text-primary not-italic serif">architect</span> the moments women carry with them.
@@ -66,7 +66,7 @@ const Index = () => {
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(201,132,122,0.2), transparent 60%, hsl(var(--background)) 100%)" }} />
         </div>
         <div className="relative px-8 md:px-[70px] py-[90px] flex flex-col justify-center">
-          <div className="absolute left-0 top-[90px] bottom-[90px] w-px bg-primary/50" />
+          <div className="absolute left-0 top-[90px] bottom-[90px] w-px" style={{ background: "linear-gradient(to bottom, rgba(0,229,200,0.5), rgba(201,132,122,0.45))" }} />
           <div className="label-teal mb-10 reveal">WHO THIS IS FOR</div>
           <div className="space-y-6">
             {identityLines.map((line, i) => (
