@@ -11,7 +11,7 @@ const Navigation = () => {
         </Link>
         <div className="hidden md:flex items-center gap-10 text-xs uppercase tracking-[0.28em]" style={{ fontFamily: "Jost", fontWeight: 300 }}>
           <Link to="/" className={`transition-colors ${pathname === "/" ? "text-primary" : "text-foreground/70 hover:text-primary"}`}>Home</Link>
-          <Link to="/events" className={`transition-colors ${pathname === "/events" ? "text-primary" : "text-foreground/70 hover:text-primary"}`}>Events</Link>
+          <Link to="/events" className={`transition-colors ${pathname === "/events" ? "text-primary" : "text-foreground/70 hover:text-primary"}`}>Experience</Link>
         </div>
         <Link to="/events" className="btn-teal-outline text-[0.65rem]">See Events</Link>
       </nav>
