@@ -32,8 +32,7 @@ Deno.serve(async (req) => {
     }
 
     const timestamp = new Date().toISOString();
-    const range = `'${SHEET_TAB}'!A:E`;
-    const url = `${GATEWAY}/spreadsheets/${SPREADSHEET_ID}/values/${range}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+    const url = `${GATEWAY}/spreadsheets/${SPREADSHEET_ID}/values:batchUpdate`;
 
     const res = await fetch(url, {
       method: "POST",
@@ -43,7 +42,13 @@ Deno.serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        values: [[timestamp, first, last, email, phone]],
+        valueInputOption: "USER_ENTERED",
+        data: [
+          {
+            range: `'${SHEET_TAB}'!A1:E1`,
+            values: [[timestamp, first, last, email, phone]],
+          },
+        ],
       }),
     });
 
