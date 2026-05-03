@@ -2,7 +2,7 @@
 import { corsHeaders } from "https://esm.sh/@supabase/supabase-js@2.95.0/cors";
 
 const SPREADSHEET_ID = "1YoH2QH8YTeIjVDgDzZ6hDkCTANjXH4OmI-2FqzcGSHg";
-const SHEET_TAB = "Form Responses 1";
+const SHEET_ID = 650499092;
 const GATEWAY = "https://connector-gateway.lovable.dev/google_sheets/v4";
 
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
@@ -32,7 +32,8 @@ Deno.serve(async (req) => {
     }
 
     const timestamp = new Date().toISOString();
-    const url = `${GATEWAY}/spreadsheets/${SPREADSHEET_ID}/values:batchUpdate`;
+    const url = `${GATEWAY}/spreadsheets/${SPREADSHEET_ID}:batchUpdate`;
+    const cell = (v: string) => ({ userEnteredValue: { stringValue: v } });
 
     const res = await fetch(url, {
       method: "POST",
@@ -42,11 +43,17 @@ Deno.serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        valueInputOption: "USER_ENTERED",
-        data: [
+        requests: [
           {
-            range: `'${SHEET_TAB}'!A1:E1`,
-            values: [[timestamp, first, last, email, phone]],
+            appendCells: {
+              sheetId: SHEET_ID,
+              fields: "userEnteredValue",
+              rows: [
+                {
+                  values: [timestamp, first, last, email, phone].map(cell),
+                },
+              ],
+            },
           },
         ],
       }),
