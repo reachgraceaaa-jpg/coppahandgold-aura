@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Props {
   label?: string;
@@ -14,18 +15,31 @@ const WaitlistSection = ({
   headlineLine2 = "in the room.",
   subline = "CoppahandGold experiences are limited by design. That's how we protect the quality of the room. The waitlist is how you stay ahead.",
 }: Props) => {
-  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf2kaQ6khPG-07fK6NbUxZKsXBaZpuscPx_7GajAnmBwitamQ/viewform?usp=publish-editor";
   const [form, setForm] = useState({ first: "", last: "", email: "", phone: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.first || !form.email) {
       toast.error("Please share your name and email.");
       return;
     }
-    window.open(FORM_URL, "_blank", "noopener,noreferrer");
-    toast.success("Opening the waitlist form…");
-    setForm({ first: "", last: "", email: "", phone: "" });
+    setSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("waitlist-submit", {
+        body: form,
+      });
+      if (error || (data && data.success === false)) {
+        throw new Error((data && data.error) || error?.message || "Something went wrong");
+      }
+      toast.success("You're on the list. We'll be in touch.");
+      setForm({ first: "", last: "", email: "", phone: "" });
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Something went wrong";
+      toast.error(msg);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -54,7 +68,7 @@ const WaitlistSection = ({
           <input className="input-dark md:col-span-2" type="email" placeholder="Email address" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
           <input className="input-dark md:col-span-2" placeholder="Phone number (optional)" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
           <div className="md:col-span-2 flex flex-col items-center gap-5 mt-4">
-            <button type="submit" className="btn-teal-filled btn-pulse">Secure My Spot</button>
+            <button type="submit" disabled={submitting} className="btn-teal-filled btn-pulse disabled:opacity-60">{submitting ? "Securing…" : "Secure My Spot"}</button>
             <p className="muted-text italic-serif text-sm">No noise. Just the rooms worth knowing about.</p>
           </div>
         </form>
