@@ -14,6 +14,7 @@ const WaitlistSection = ({
   headlineLine2 = "in the room.",
   subline = "CoppahandGold experiences are limited by design. That's how we protect the quality of the room. The waitlist is how you stay ahead.",
 }: Props) => {
+  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf2kaQ6khPG-07fK6NbUxZKsXBaZpuscPx_7GajAnmBwitamQ/viewform?usp=publish-editor";
   const [form, setForm] = useState({ first: "", last: "", email: "", phone: "" });
 
   const submit = (e: React.FormEvent) => {
@@ -22,7 +23,8 @@ const WaitlistSection = ({
       toast.error("Please share your name and email.");
       return;
     }
-    toast.success("You're on the list. We'll be in touch.");
+    window.open(FORM_URL, "_blank", "noopener,noreferrer");
+    toast.success("Opening the waitlist form…");
     setForm({ first: "", last: "", email: "", phone: "" });
   };
 

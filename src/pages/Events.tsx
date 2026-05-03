@@ -147,9 +147,9 @@ const Events = () => {
                 </div>
 
                 {e.status === "available" ? (
-                  <button className="btn-teal-filled">Get Your Ticket</button>
+                  <a href="https://selar.com/v388h7t888" target="_blank" rel="noopener noreferrer" className="btn-teal-filled">Get Your Ticket</a>
                 ) : (
-                  <a href="#waitlist" className="btn-teal-outline">Join the Waitlist</a>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2kaQ6khPG-07fK6NbUxZKsXBaZpuscPx_7GajAnmBwitamQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" className="btn-teal-outline">Join the Waitlist</a>
                 )}
               </div>
             </article>
