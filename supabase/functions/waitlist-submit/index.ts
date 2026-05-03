@@ -32,7 +32,7 @@ Deno.serve(async (req) => {
     }
 
     const timestamp = new Date().toISOString();
-    const range = `${SHEET_TAB}!A:E`;
+    const range = `'${SHEET_TAB}'!A:E`;
     const url = `${GATEWAY}/spreadsheets/${SPREADSHEET_ID}/values/${range}:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
 
     const res = await fetch(url, {
