@@ -68,7 +68,7 @@ const WaitlistSection = ({
           <input className="input-dark md:col-span-2" type="email" placeholder="Email address" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
           <input className="input-dark md:col-span-2" placeholder="Phone number (optional)" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
           <div className="md:col-span-2 flex flex-col items-center gap-5 mt-4">
-            <button type="submit" className="btn-teal-filled btn-pulse">Secure My Spot</button>
+            <button type="submit" disabled={submitting} className="btn-teal-filled btn-pulse disabled:opacity-60">{submitting ? "Securing…" : "Secure My Spot"}</button>
             <p className="muted-text italic-serif text-sm">No noise. Just the rooms worth knowing about.</p>
           </div>
         </form>
