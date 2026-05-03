@@ -17,7 +17,7 @@ const events: EventCard[] = [
     status: "available",
     name: "Cones & Code",
     description: "Yoga, Ice cream. Vibe coding. One evening, three experiences. Location, theme and styling direction will be shared with you upon ticket purchase.",
-    details: "Late April 2025 · Abuja · ₦45,000 · Limited",
+    details: "Friday, May 8th 2026 · Abuja · ₦45,000 · Limited",
     tags: ["Mat Yoga", "Ice Cream Bar", "Vibe Coding"],
   },
   {
@@ -149,7 +149,7 @@ const Events = () => {
                 {e.status === "available" ? (
                   <a href="https://selar.com/v388h7t888" target="_blank" rel="noopener noreferrer" className="btn-teal-filled">Get Your Ticket</a>
                 ) : (
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSf2kaQ6khPG-07fK6NbUxZKsXBaZpuscPx_7GajAnmBwitamQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" className="btn-teal-outline">Join the Waitlist</a>
+                  <a href="#waitlist" className="btn-teal-outline">Join the Waitlist</a>
                 )}
               </div>
             </article>
