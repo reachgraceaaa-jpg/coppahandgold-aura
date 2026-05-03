@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Props {
   label?: string;
@@ -14,18 +15,31 @@ const WaitlistSection = ({
   headlineLine2 = "in the room.",
   subline = "CoppahandGold experiences are limited by design. That's how we protect the quality of the room. The waitlist is how you stay ahead.",
 }: Props) => {
-  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf2kaQ6khPG-07fK6NbUxZKsXBaZpuscPx_7GajAnmBwitamQ/viewform?usp=publish-editor";
   const [form, setForm] = useState({ first: "", last: "", email: "", phone: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.first || !form.email) {
       toast.error("Please share your name and email.");
       return;
     }
-    window.open(FORM_URL, "_blank", "noopener,noreferrer");
-    toast.success("Opening the waitlist form…");
-    setForm({ first: "", last: "", email: "", phone: "" });
+    setSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("waitlist-submit", {
+        body: form,
+      });
+      if (error || (data && data.success === false)) {
+        throw new Error((data && data.error) || error?.message || "Something went wrong");
+      }
+      toast.success("You're on the list. We'll be in touch.");
+      setForm({ first: "", last: "", email: "", phone: "" });
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Something went wrong";
+      toast.error(msg);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
