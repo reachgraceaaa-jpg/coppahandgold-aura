@@ -23,21 +23,34 @@ const HeroSlideshow = () => {
           src={heroImg}
           alt="A woman in an architectural space"
           className="w-full h-full object-cover"
-          style={{ filter: "brightness(0.78) saturate(0.85) contrast(0.95)" }}
+          style={{
+            filter: "brightness(0.55) saturate(0.7) contrast(0.92) blur(1px)",
+            transform: "scale(0.82)",
+            transformOrigin: "center 35%",
+          }}
         />
-        {/* Smooth tonal blend into site bg */}
+        {/* Deep tonal blend into site bg — figure mostly dissolves into atmosphere */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(8,10,9,0.55) 0%, rgba(8,10,9,0.35) 35%, rgba(8,10,9,0.55) 70%, rgba(8,10,9,0.92) 100%)",
+              "linear-gradient(180deg, rgba(8,10,9,0.78) 0%, rgba(8,10,9,0.62) 30%, rgba(8,10,9,0.78) 65%, rgba(8,10,9,0.97) 100%)",
           }}
         />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(8,10,9,0.55) 80%, rgba(8,10,9,0.95) 100%)",
+              "radial-gradient(ellipse at 50% 45%, transparent 12%, rgba(8,10,9,0.55) 55%, rgba(8,10,9,0.95) 92%)",
+          }}
+        />
+        {/* Soft warm glow to gently illuminate the figure without revealing too much */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 30% 40% at 50% 42%, rgba(255,225,195,0.10), transparent 70%)",
+            mixBlendMode: "screen",
           }}
         />
         <div
