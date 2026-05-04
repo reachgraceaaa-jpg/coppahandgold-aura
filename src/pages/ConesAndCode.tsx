@@ -50,6 +50,7 @@ function useReveal<T extends HTMLElement = HTMLDivElement>(opts?: { threshold?: 
 /* Scoped style block — keeps the dark CoppahandGold site untouched */
 const PageStyles = () => (
   <style>{`
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;500;600&family=Outfit:wght@200;300;400;500&display=swap');
     .cc-scope {
       --cc-bg: 36 38% 96%;
       --cc-ink: 20 35% 9%;
