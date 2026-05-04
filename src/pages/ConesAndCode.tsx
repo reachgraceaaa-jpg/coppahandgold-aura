@@ -400,6 +400,7 @@ const IntentionSetter = () => {
 
 const ConesAndCode = () => {
   const [name, setName] = useState<string | null>(null);
+  usePageMeta();
 
   useEffect(() => {
     const stored = sessionStorage.getItem("conesAndCodeName");
@@ -415,11 +416,6 @@ const ConesAndCode = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Cones &amp; Code — A CoppahandGold Evening</title>
-        <meta name="description" content="Welcome to Cones & Code — an intentional women's wellness evening by CoppahandGold. May 8th in Abuja." />
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
       <PageStyles />
       <div className="cc-scope">
         {!name ? (
