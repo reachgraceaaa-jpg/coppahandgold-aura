@@ -1,6 +1,23 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Helmet } from "react-helmet-async";
 import { Sparkles, Flower2, Leaf, Code2, UtensilsCrossed, ArrowRight, NotebookPen, Camera } from "lucide-react";
+
+/* Set page title + noindex tag while mounted */
+function usePageMeta() {
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title = "Cones & Code — A CoppahandGold Evening";
+
+    const robots = document.createElement("meta");
+    robots.name = "robots";
+    robots.content = "noindex, nofollow";
+    document.head.appendChild(robots);
+
+    return () => {
+      document.title = prevTitle;
+      document.head.removeChild(robots);
+    };
+  }, []);
+}
 
 /* Local reveal hook (ref-based, scoped to this page) */
 function useReveal<T extends HTMLElement = HTMLDivElement>(opts?: { threshold?: number }) {
