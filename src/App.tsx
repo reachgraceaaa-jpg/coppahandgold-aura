@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Events from "./pages/Events.tsx";
 import ConesAndCode from "./pages/ConesAndCode.tsx";
+import BuildTonight from "./pages/BuildTonight.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import CustomCursor from "./components/CustomCursor";
 
@@ -23,6 +24,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/events" element={<Events />} />
           <Route path="/cones-and-code-welcome" element={<ConesAndCode />} />
+          <Route path="/cones-and-code" element={<ConesAndCode />} />
+          <Route path="/build" element={<BuildTonight />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
