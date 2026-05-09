@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 function usePageMeta() {
   useEffect(() => {
     const prev = document.title;
-    document.title = "Build Tonight — Cones & Code";
+    document.title = "Cones & Code — Recap";
     const robots = document.createElement("meta");
     robots.name = "robots";
     robots.content = "noindex, nofollow";
@@ -93,7 +93,7 @@ export default function BuildTonight() {
           </div>
 
           <p className={`relative font-montserrat text-[#00b4aa] text-[10px] tracking-[0.5em] uppercase font-medium text-center mb-6 transition-all duration-[1.5s] delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
-            Cones & Code
+            Cones & Code · Recap
           </p>
           <div className="relative flex items-center justify-center gap-4 mb-4">
             <span className={`block h-px bg-gradient-to-r from-transparent to-[#00b4aa]/50 transition-all duration-[1.8s] delay-500 origin-right ${loaded ? 'w-16 opacity-100' : 'w-0 opacity-0'}`} />
@@ -101,53 +101,45 @@ export default function BuildTonight() {
             <span className={`block h-px bg-gradient-to-l from-transparent to-[#00b4aa]/50 transition-all duration-[1.8s] delay-500 origin-left ${loaded ? 'w-16 opacity-100' : 'w-0 opacity-0'}`} />
           </div>
           <p className={`relative font-montserrat text-[#faf7f3]/30 text-[9px] tracking-[0.35em] uppercase text-center transition-all duration-[1.5s] delay-[1s] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
-            A vibe coding experience
+            Yoga · Vibe Coding · A Quiet Build
           </p>
         </section>
 
         <section className={`px-6 md:px-12 max-w-2xl mx-auto pt-12 pb-20 transition-all duration-[1.5s] delay-[1.2s] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <h1 className="font-serif italic text-4xl md:text-5xl leading-[1.15] mb-8">
-            Tonight, you build<br />something real.
+            You arrived with an idea.<br />You leave with something real.
           </h1>
           <p className="font-montserrat text-base md:text-lg leading-relaxed text-[#faf7f3]/80 font-light">
-            Vibe coding is the practice of building digital products using AI tools and plain language
-            — no technical background required. If you can describe what you want, you can build it.
+            Thank you for sitting with us tonight. Between the breath, the cones and the keys, you
+            built a first version of something that did not exist a few hours ago. This page is yours
+            to keep — a quiet recap of the tools we used, and a few notes on where to go from here.
           </p>
         </section>
 
         <Divider />
 
         <Section>
-          <Label>Why This Works</Label>
-          <p className="font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light mb-6">
-            AI tools have removed the barrier between an idea and its execution. What once required a
-            developer, a designer, and weeks of work can now be built in a single session by someone
-            who has never written a line of code. Tonight is proof of that.
-          </p>
-          <p className="font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light">
-            The goal is not perfection. The goal is a working first version — something real, something
-            yours, built in under an hour.
-          </p>
-        </Section>
-
-        <Divider />
-
-        <Section>
-          <Label>Tonight's Tools</Label>
+          <Label>The Tools, Revisited</Label>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="border border-[#00b4aa]/40 rounded-sm p-6">
               <h3 className="font-serif italic text-xl mb-3">Claude</h3>
               <p className="font-montserrat text-sm leading-relaxed text-[#faf7f3]/75 font-light">
-                Your thinking partner. Use Claude to develop your idea, write your copy, define your
-                audience, and structure your content before you build.
+                Your thinking partner. Use it to shape ideas, refine copy, sharpen a brief, or
+                untangle a thought before it becomes a prompt.
               </p>
+              <a href="https://claude.ai" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-[#00b4aa] text-xs tracking-widest uppercase underline underline-offset-4 decoration-[#00b4aa]/40 hover:decoration-[#00b4aa]">
+                claude.ai
+              </a>
             </div>
             <div className="border border-[#00b4aa]/40 rounded-sm p-6">
               <h3 className="font-serif italic text-xl mb-3">Lovable</h3>
               <p className="font-montserrat text-sm leading-relaxed text-[#faf7f3]/75 font-light">
-                Your builder. Paste your prompt into Lovable and it generates a fully designed,
-                functional page. Describe changes in plain English and it adjusts in real time.
+                Your builder. Describe what you want in plain language and it generates a designed,
+                functional page. Iterate by speaking to it like a collaborator.
               </p>
+              <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-[#00b4aa] text-xs tracking-widest uppercase underline underline-offset-4 decoration-[#00b4aa]/40 hover:decoration-[#00b4aa]">
+                lovable.dev
+              </a>
             </div>
           </div>
         </Section>
@@ -155,86 +147,88 @@ export default function BuildTonight() {
         <Divider />
 
         <Section>
-          <Label>What You Can Build</Label>
+          <Label>Writing The Prompt</Label>
           <p className="font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light mb-8">
-            A vibe coding session is not limited to one type of output. Consider what would be most
-            useful to you right now.
+            The clarity of your prompt shaped the quality of your build. As a reminder, a strong
+            prompt names what you are building, who it is for, what sections it needs, and how it
+            should feel.
           </p>
-          <ul className="space-y-4 font-montserrat text-sm leading-relaxed text-[#faf7f3]/75 font-light">
-            <li>A landing page for a business, brand or service.</li>
-            <li>A digital product page to sell an ebook, course or template.</li>
-            <li>A portfolio to present your work professionally.</li>
-            <li>A personal website or online presence.</li>
-            <li>A waitlist page for something you are launching.</li>
-            <li>A simple web application — a habit tracker, a daily affirmation tool, a workout log.</li>
-          </ul>
-        </Section>
-
-        <Divider />
-
-        <Section>
-          <Label>Your Prompt</Label>
-          <p className="font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light mb-8">
-            The quality of what Lovable builds is directly tied to how clearly you describe it. Write
-            your prompt in your notes app before you paste it in.
-          </p>
-          <div className="border-l-2 border-[#00b4aa]/60 pl-6 mb-8">
+          <div className="border-l-2 border-[#00b4aa]/60 pl-6">
             <p className="font-montserrat text-sm leading-relaxed text-[#faf7f3]/70 font-light italic">
               <span className="text-[#00b4aa] not-italic font-medium text-xs tracking-widest uppercase block mb-3">
-                Example
+                A reusable shape
               </span>
-              Build a landing page for my consulting practice. My clients are business owners across
-              Nigeria looking for strategic support. I want a hero section with a strong headline, a
-              section outlining my three core services, client testimonials, and a contact form. The
-              tone should be confident, clean and professional.
+              Build a [type of page] for [audience]. Include [sections]. The tone should be
+              [feeling]. Use [colour direction] and a [font direction].
             </p>
           </div>
-          <p className="font-montserrat text-xs leading-relaxed text-[#faf7f3]/50 font-light">
-            Include: what you are building, who it is for, what sections you need, and how it should feel.
-          </p>
         </Section>
 
         <Divider />
 
         <Section>
-          <Label>How It Works</Label>
-          <ol className="space-y-8 font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light">
-            <li><span className="text-[#00b4aa] font-medium mr-3">1.</span>Write your prompt in your notes app. Be specific.</li>
-            <li><span className="text-[#00b4aa] font-medium mr-3">2.</span>If you need help shaping your thoughts into a clear idea, paste everything into Claude and ask it to help you structure your prompt.</li>
-            <li><span className="text-[#00b4aa] font-medium mr-3">3.</span>Open Lovable and create a free account using your email address.</li>
-            <li><span className="text-[#00b4aa] font-medium mr-3">4.</span>Paste your prompt. Your page will generate within minutes.</li>
-            <li><span className="text-[#00b4aa] font-medium mr-3">5.</span>Describe any changes in plain English. Lovable will adjust. Your page is live the moment it generates — copy the link and share it immediately.</li>
-          </ol>
-        </Section>
-
-        <Divider />
-
-        <Section>
-          <Label>Taking It Further</Label>
+          <Label>Hosting Your Page</Label>
           <p className="font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light mb-6">
-            Your Lovable link is live from the moment you build. To give your page a professional
-            address, connect it to a custom domain.
+            Your Lovable link is already live. To give your work a professional address — something
+            you would proudly put on a business card or in a bio — connect it to a custom domain.
+          </p>
+          <p className="font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light mb-6">
+            Domains are available from <span className="text-[#faf7f3]">₦5,000 per year</span>. Once
+            you have one, Lovable lets you connect it inside the project's publish settings — the
+            full process takes under ten minutes.
+          </p>
+          <ol className="space-y-4 font-montserrat text-sm leading-relaxed text-[#faf7f3]/75 font-light mb-8">
+            <li><span className="text-[#00b4aa] font-medium mr-3">1.</span>Register a domain you love. Keep it short and easy to say aloud.</li>
+            <li><span className="text-[#00b4aa] font-medium mr-3">2.</span>In Lovable, click <em>Publish</em>, then <em>Connect domain</em>.</li>
+            <li><span className="text-[#00b4aa] font-medium mr-3">3.</span>Copy the DNS records Lovable provides into your domain provider's dashboard.</li>
+            <li><span className="text-[#00b4aa] font-medium mr-3">4.</span>Wait a few minutes. Your page is now live at your own address.</li>
+          </ol>
+          <a
+            href="https://app.go54.com/signup?aff=gracea_ViULV"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block border border-[#00b4aa]/60 text-[#00b4aa] text-xs tracking-[0.3em] uppercase px-6 py-3 hover:bg-[#00b4aa]/10 transition-colors"
+          >
+            Register a domain →
+          </a>
+        </Section>
+
+        <Divider />
+
+        <Section>
+          <Label>From Here, Keep Going</Label>
+          <p className="font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light mb-6">
+            What you made tonight is not the finished thing — it is the beginning of one. Open it
+            again tomorrow. Change the words. Add a section. Show it to someone. The tools we used
+            are free to keep using, and the muscle you built tonight only gets stronger with practice.
           </p>
           <p className="font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light">
-            Domains are available from ₦5,000 per year. To register yours, you can visit{" "}
-            <a href="https://app.go54.com/signup?aff=gracea_ViULV" target="_blank" rel="noopener noreferrer" className="text-[#00b4aa] underline underline-offset-4 decoration-[#00b4aa]/40 hover:decoration-[#00b4aa]">
-              coppahandgold/domains
-            </a>{" "}
-            — a straightforward process that takes under ten minutes.
+            Explore. Break things. Rebuild them. The version you ship next month will look nothing
+            like the one you ship tonight, and that is the point.
           </p>
         </Section>
 
         <Divider />
 
         <Section>
-          <Label>From Here</Label>
+          <Label>The Next Edition</Label>
           <p className="font-montserrat text-base leading-relaxed text-[#faf7f3]/80 font-light mb-6">
-            Tonight is a starting point. The tools you have used here are available to you beyond this
-            room. Claude and Lovable are free to start. Your first version does not need to be final —
-            it needs to exist.
+            We are quietly planning a deeper, hands-on Cones & Code — a longer session with more
+            intel, more building, more of the questions we did not have time to answer tonight.
           </p>
-          <p className="font-serif italic text-xl text-[#faf7f3]/90 mb-10">
-            Build it tonight. Refine it from here.
+          <p className="font-serif italic text-xl text-[#faf7f3]/90">
+            If tonight was the introduction, the next one is the studio.
+          </p>
+          <p className="font-montserrat text-sm leading-relaxed text-[#faf7f3]/60 font-light mt-6">
+            Stay close to <a href="https://www.instagram.com/coppahandgold" target="_blank" rel="noopener noreferrer" className="text-[#00b4aa] underline underline-offset-4 decoration-[#00b4aa]/40 hover:decoration-[#00b4aa]">@coppahandgold</a> for the announcement.
+          </p>
+        </Section>
+
+        <Divider />
+
+        <Section>
+          <p className="font-serif italic text-2xl text-[#faf7f3]/90 mb-10 leading-snug">
+            Thank you for trusting us with your evening.<br />Now go finish what you started.
           </p>
           <p className="font-montserrat text-xs tracking-wide text-[#00b4aa]/70">
             A CoppahandGold experience · coppahandgold.org · @coppahandgold
