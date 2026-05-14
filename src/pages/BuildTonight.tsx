@@ -107,7 +107,7 @@ export default function BuildTonight() {
 
         <section className={`px-6 md:px-12 max-w-2xl mx-auto pt-12 pb-20 transition-all duration-[1.5s] delay-[1.2s] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <h1 className="font-serif italic text-4xl md:text-5xl leading-[1.15] mb-8">
-            You arrived with an idea.<br />You leave with something real.
+            You arrived with an idea.<br />You left with something real.
           </h1>
           <p className="font-montserrat text-base md:text-lg leading-relaxed text-[#faf7f3]/80 font-light">
             Thank you for sitting with us tonight. Between the breath, the cones and the keys, you
