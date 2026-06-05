@@ -81,7 +81,7 @@ const HeroSlideshow = () => {
             We curate the ones worth being in.
           </p>
           <div className="flex flex-wrap items-center gap-8">
-            <a href="#waitlist" className="btn-teal-outline btn-pulse">Join the Waitlist</a>
+            <a href="#waitlist" onClick={(e) => { e.preventDefault(); document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-teal-outline btn-pulse">Join the Waitlist</a>
             <a href="/events" className="ghost-link">See Events ↓</a>
           </div>
         </div>
