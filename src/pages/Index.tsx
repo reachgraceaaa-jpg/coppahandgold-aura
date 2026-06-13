@@ -5,7 +5,7 @@ import Calendar from "@/components/Calendar";
 import CommunitySection from "@/components/CommunitySection";
 import WaitlistSection from "@/components/WaitlistSection";
 import { useReveal } from "@/hooks/useReveal";
-import womanProfile from "@/assets/woman-profile.jpg";
+import womanBack from "@/assets/woman-back.jpg";
 import pillarMove from "@/assets/pillar-move.jpg";
 import pillarGather from "@/assets/pillar-gather.jpg";
 import pillarExpand from "@/assets/pillar-expand.jpg";
@@ -62,8 +62,9 @@ const Index = () => {
       {/* Who this is for */}
       <section className="grid md:grid-cols-2 min-h-[660px]">
         <div className="relative overflow-hidden min-h-[420px]">
-          <img src={womanProfile} alt="Woman in profile" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(201,132,122,0.2), transparent 60%, hsl(var(--background)) 100%)" }} />
+          <img src={womanBack} alt="Woman from behind in an architectural space" loading="lazy" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.55) saturate(0.72) contrast(0.92)", transform: "scale(1.05)", transformOrigin: "center center" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(201,132,122,0.18), transparent 55%, hsl(var(--background)) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(8,10,9,0.55) 100%)" }} />
         </div>
         <div className="relative px-8 md:px-[70px] py-[90px] flex flex-col justify-center">
           <div className="absolute left-0 top-[90px] bottom-[90px] w-px" style={{ background: "linear-gradient(to bottom, rgba(0,229,200,0.5), rgba(201,132,122,0.45))" }} />
