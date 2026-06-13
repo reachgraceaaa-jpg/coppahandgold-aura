@@ -17,40 +17,29 @@ const HeroSlideshow = () => {
       {/* SLIDE 1 — Brand image */}
       <div
         className="absolute inset-0 transition-opacity duration-[1400ms] ease-in-out"
-        style={{ opacity: slide === 0 ? 1 : 0 }}
+        style={{ opacity: slide === 0 ? 1 : 0, pointerEvents: slide === 0 ? "auto" : "none" }}
       >
         <img
           src={heroImg}
-          alt="A woman in an architectural space"
+          alt="An open-air wellness setup — yoga mats and gift boxes arranged in a courtyard"
           className="w-full h-full object-cover"
           style={{
-            filter: "brightness(0.55) saturate(0.7) contrast(0.92) blur(1px)",
-            transform: "scale(0.82)",
-            transformOrigin: "center 35%",
+            filter: "brightness(0.62) saturate(0.85) contrast(0.95)",
           }}
         />
-        {/* Deep tonal blend into site bg — figure mostly dissolves into atmosphere */}
+        {/* Deep tonal blend into site bg */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(180deg, rgba(8,10,9,0.78) 0%, rgba(8,10,9,0.62) 30%, rgba(8,10,9,0.78) 65%, rgba(8,10,9,0.97) 100%)",
+              "linear-gradient(180deg, rgba(8,10,9,0.55) 0%, rgba(8,10,9,0.35) 35%, rgba(8,10,9,0.75) 75%, rgba(8,10,9,0.97) 100%)",
           }}
         />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 45%, transparent 12%, rgba(8,10,9,0.55) 55%, rgba(8,10,9,0.95) 92%)",
-          }}
-        />
-        {/* Soft warm glow to gently illuminate the figure without revealing too much */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 30% 40% at 50% 42%, rgba(255,225,195,0.10), transparent 70%)",
-            mixBlendMode: "screen",
+              "radial-gradient(ellipse at 50% 45%, transparent 25%, rgba(8,10,9,0.45) 75%, rgba(8,10,9,0.9) 100%)",
           }}
         />
         <div
@@ -81,7 +70,16 @@ const HeroSlideshow = () => {
             We curate the ones worth being in.
           </p>
           <div className="flex flex-wrap items-center gap-8">
-            <a href="#waitlist" onClick={(e) => { e.preventDefault(); document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-teal-outline btn-pulse">Join the Waitlist</a>
+            <button
+              type="button"
+              onClick={() => {
+                const el = document.getElementById("waitlist");
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="btn-teal-outline btn-pulse cursor-pointer"
+            >
+              Join the Waitlist
+            </button>
             <a href="/events" className="ghost-link">See Events ↓</a>
           </div>
         </div>
@@ -90,7 +88,7 @@ const HeroSlideshow = () => {
       {/* SLIDE 2 — Content calendar */}
       <div
         className="absolute inset-0 transition-opacity duration-[1400ms] ease-in-out"
-        style={{ opacity: slide === 1 ? 1 : 0 }}
+        style={{ opacity: slide === 1 ? 1 : 0, pointerEvents: slide === 1 ? "auto" : "none" }}
       >
         {/* Soft atmospheric bg to match site */}
         <div className="absolute inset-0 bg-background" />
@@ -113,33 +111,28 @@ const HeroSlideshow = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 w-full max-w-6xl">
             <MonthCalendar
-              monthName="April"
-              year={2026}
-              monthIndex={3}
-              events={[
-                { start: 21, end: 26, label: "Cones & Code", tone: "mauve" },
-                { start: 27, end: 27, label: "Cones & Code", tone: "mauve" },
-              ]}
-            />
-            <MonthCalendar
-              monthName="May"
-              year={2026}
-              monthIndex={4}
-              events={[
-                { start: 5, end: 10, label: "Tennis Classic", tone: "green" },
-                { start: 11, end: 11, label: "Tennis Classic", tone: "green" },
-                { start: 19, end: 24, label: "Sunset Sessions", tone: "brown" },
-                { start: 25, end: 25, label: "Auto Zen", tone: "silver" },
-                { start: 26, end: 31, label: "Auto Zen", tone: "silver" },
-              ]}
-            />
-            <MonthCalendar
               monthName="June"
               year={2026}
               monthIndex={5}
               events={[
-                { start: 2, end: 7, label: "Hyrox Festival", tone: "green" },
-                { start: 8, end: 8, label: "Hyrox Festival", tone: "green" },
+                { start: 22, end: 28, label: "Still", tone: "mauve" },
+              ]}
+            />
+            <MonthCalendar
+              monthName="July"
+              year={2026}
+              monthIndex={6}
+              events={[
+                { start: 26, end: 31, label: "Court Side", tone: "green" },
+              ]}
+            />
+            <MonthCalendar
+              monthName="August"
+              year={2026}
+              monthIndex={7}
+              events={[
+                { start: 16, end: 22, label: "Auto Zen: The F1 Edit", tone: "silver" },
+                { start: 23, end: 29, label: "Founders' Table", tone: "brown" },
               ]}
             />
           </div>

@@ -5,50 +5,94 @@ import WaitlistSection from "@/components/WaitlistSection";
 import { useReveal } from "@/hooks/useReveal";
 
 interface EventCard {
-  status: "available" | "soon";
+  status: "experienced" | "soon";
   name: string;
   description: string;
   details: string;
   tags: string[];
+  accent: "mauve" | "teal" | "green" | "silver" | "brown";
 }
 
 const events: EventCard[] = [
   {
-    status: "available",
+    status: "experienced",
     name: "Cones & Code",
-    description: "Yoga, Ice cream. Vibe coding. One evening, three experiences. Location, theme and styling direction will be shared with you upon ticket purchase.",
-    details: "Friday, May 8th 2026 · Abuja · ₦45,000 · Limited",
+    description: "Yoga. Ice cream. Vibe coding. One evening, three experiences — a room where stillness met creation.",
+    details: "Friday, May 8th 2026 · Abuja · ₦45,000 · Sold Out",
     tags: ["Mat Yoga", "Ice Cream Bar", "Vibe Coding"],
+    accent: "mauve",
   },
   {
     status: "soon",
-    name: "The Tennis Classic",
-    description: "Competitive play meets curated recovery, at a luxury hotel.",
-    details: "May · Abuja · Price TBC · Limited",
-    tags: ["Tennis", "Bio Bar", "Luxury Setting"],
+    name: "Still",
+    description: "Yoga. Sound. Stillness. A room designed for the breath you've been holding.",
+    details: "June 2026 · Abuja · Price TBD · Limited",
+    tags: ["Yoga", "Sound", "Stillness"],
+    accent: "teal",
   },
   {
     status: "soon",
-    name: "Sunset Sessions",
-    description: "A rooftop. Deep house. Sunset yoga. The life, basically.",
-    details: "May · Abuja · Price TBC · Limited",
-    tags: ["Rooftop Yoga", "Deep House", "Sunset Buffet"],
+    name: "Court Side",
+    description: "Tennis. Padel. Pilates. Bio-bar. Competitive play meets considered recovery.",
+    details: "July 2026 · Abuja · Price TBD · Limited",
+    tags: ["Tennis", "Padel", "Pilates", "Bio-Bar"],
+    accent: "green",
   },
   {
     status: "soon",
-    name: "The Hyrox Experience",
-    description: "A fitness festival. High-intensity. Community-driven.",
-    details: "June · Abuja · Price TBC · Limited",
-    tags: ["Hyrox-Style Workout", "Fitness Festival", "Community"],
+    name: "Auto Zen: The F1 Edit",
+    description: "Pilates. Dream cars. The life. An unexpected pairing — and that's the point.",
+    details: "August 2026 · Abuja · Price TBD · Limited",
+    tags: ["Pilates", "Dream Cars", "The Life"],
+    accent: "silver",
   },
   {
     status: "soon",
-    name: "Auto Zen",
-    description: "Yoga in a car showroom. It sounds unexpected — that's the point.",
-    details: "May · Abuja · Price TBC · Limited",
-    tags: ["Yoga", "Car Showroom", "Curated Drinks"],
+    name: "Founders' Table",
+    description: "Builders. Conversation. Connection. A room for the ones quietly making things happen.",
+    details: "August 2026 · Abuja · Price TBD · Limited",
+    tags: ["Builders", "Conversation", "Connection"],
+    accent: "brown",
   },
 ];
+
+const accentPalette: Record<EventCard["accent"], { glow: string; edge: string; chipBg: string; chipBorder: string; chipText: string }> = {
+  mauve: {
+    glow: "rgba(170,115,125,0.28)",
+    edge: "rgba(201,132,122,0.55)",
+    chipBg: "rgba(201,132,122,0.08)",
+    chipBorder: "rgba(201,132,122,0.40)",
+    chipText: "#e9b3ab",
+  },
+  teal: {
+    glow: "rgba(0,229,200,0.20)",
+    edge: "rgba(0,229,200,0.50)",
+    chipBg: "rgba(0,229,200,0.06)",
+    chipBorder: "rgba(0,229,200,0.35)",
+    chipText: "hsl(var(--primary))",
+  },
+  green: {
+    glow: "rgba(120,160,130,0.25)",
+    edge: "rgba(140,180,150,0.50)",
+    chipBg: "rgba(120,160,130,0.08)",
+    chipBorder: "rgba(140,180,150,0.40)",
+    chipText: "#b8d4be",
+  },
+  silver: {
+    glow: "rgba(200,210,220,0.18)",
+    edge: "rgba(200,210,220,0.45)",
+    chipBg: "rgba(200,210,220,0.06)",
+    chipBorder: "rgba(200,210,220,0.35)",
+    chipText: "rgba(230,235,240,0.92)",
+  },
+  brown: {
+    glow: "rgba(160,120,95,0.25)",
+    edge: "rgba(180,135,105,0.50)",
+    chipBg: "rgba(160,120,95,0.08)",
+    chipBorder: "rgba(180,135,105,0.40)",
+    chipText: "#d8b89a",
+  },
+};
 
 const Events = () => {
   useReveal();
@@ -73,25 +117,14 @@ const Events = () => {
       <section className="px-8 md:px-14 pb-[120px]">
         <div className="max-w-5xl mx-auto space-y-6">
           {events.map((e, i) => {
-            const glowTones = [
-              "rgba(0,229,200,0.18)",   // teal
-              "rgba(201,132,122,0.22)", // blush
-              "rgba(220,220,220,0.14)", // silver
-            ];
-            const glowEdges = [
-              "rgba(0,229,200,0.45)",
-              "rgba(201,132,122,0.5)",
-              "rgba(220,220,220,0.35)",
-            ];
-            const tone = glowTones[i % glowTones.length];
-            const edge = glowEdges[i % glowEdges.length];
+            const p = accentPalette[e.accent];
             return (
             <article
               key={e.name}
               className="group relative p-10 transition-all duration-500 reveal overflow-hidden"
               style={{
                 background: "#0f1210",
-                border: "1px solid rgba(0,229,200,0.15)",
+                border: `1px solid ${p.edge}`,
                 transitionDelay: `${i * 80}ms`,
               }}
             >
@@ -99,34 +132,54 @@ const Events = () => {
               <div
                 className="absolute -top-16 -right-16 w-56 h-56 rounded-full pointer-events-none transition-opacity duration-700 opacity-80 group-hover:opacity-100"
                 style={{
-                  background: `radial-gradient(circle, ${tone} 0%, transparent 65%)`,
+                  background: `radial-gradient(circle, ${p.glow} 0%, transparent 65%)`,
                   filter: "blur(8px)",
                 }}
               />
               <div
                 className="absolute top-0 right-0 w-24 h-px pointer-events-none"
-                style={{ background: `linear-gradient(to left, ${edge}, transparent)` }}
+                style={{ background: `linear-gradient(to left, ${p.edge}, transparent)` }}
               />
               <div
                 className="absolute top-0 right-0 w-px h-24 pointer-events-none"
-                style={{ background: `linear-gradient(to bottom, ${edge}, transparent)` }}
+                style={{ background: `linear-gradient(to bottom, ${p.edge}, transparent)` }}
               />
-              <div className="absolute inset-0 pointer-events-none border opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ borderColor: "rgba(0,229,200,0.4)" }} />
+              <div className="absolute inset-0 pointer-events-none border opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ borderColor: p.edge }} />
 
               <div className="relative">
                 <div className="mb-6">
-                  {e.status === "available" ? (
-                    <span className="inline-block px-3 py-1 text-[0.6rem] tracking-[0.22em] uppercase bg-primary text-primary-foreground" style={{ fontFamily: "Jost", fontWeight: 400 }}>
-                      Tickets Available
+                  {e.status === "experienced" ? (
+                    <span
+                      className="inline-block px-3 py-1 text-[0.6rem] tracking-[0.22em] uppercase"
+                      style={{
+                        fontFamily: "Jost",
+                        fontWeight: 400,
+                        background: p.chipBg,
+                        border: `1px solid ${p.chipBorder}`,
+                        color: p.chipText,
+                      }}
+                    >
+                      Experienced
                     </span>
                   ) : (
-                    <span className="inline-block px-3 py-1 text-[0.6rem] tracking-[0.22em] uppercase border border-primary text-primary" style={{ fontFamily: "Jost", fontWeight: 400 }}>
+                    <span
+                      className="inline-block px-3 py-1 text-[0.6rem] tracking-[0.22em] uppercase"
+                      style={{
+                        fontFamily: "Jost",
+                        fontWeight: 400,
+                        border: `1px solid ${p.chipBorder}`,
+                        color: p.chipText,
+                      }}
+                    >
                       Coming Soon
                     </span>
                   )}
                 </div>
 
-                <h2 className="serif italic-serif text-foreground mb-5" style={{ fontWeight: 300, fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.1 }}>
+                <h2
+                  className="serif italic-serif mb-5"
+                  style={{ fontWeight: 300, fontSize: "clamp(1.8rem, 3vw, 2.6rem)", lineHeight: 1.1, color: p.chipText }}
+                >
                   {e.name}
                 </h2>
 
@@ -140,14 +193,35 @@ const Events = () => {
 
                 <div className="flex flex-wrap gap-2 mb-9">
                   {e.tags.map((t) => (
-                    <span key={t} className="px-3 py-1 text-[0.65rem] tracking-[0.14em] uppercase rounded-full" style={{ fontFamily: "Jost", fontWeight: 300, color: "hsl(var(--primary))", border: "1px solid hsl(var(--primary) / 0.3)", background: "hsl(var(--primary) / 0.05)" }}>
+                    <span
+                      key={t}
+                      className="px-3 py-1 text-[0.65rem] tracking-[0.14em] uppercase rounded-full"
+                      style={{
+                        fontFamily: "Jost",
+                        fontWeight: 300,
+                        color: p.chipText,
+                        border: `1px solid ${p.chipBorder}`,
+                        background: p.chipBg,
+                      }}
+                    >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                {e.status === "available" ? (
-                  <a href="https://selar.com/v388h7t888" target="_blank" rel="noopener noreferrer" className="btn-teal-filled">Get Your Ticket</a>
+                {e.status === "experienced" ? (
+                  <span
+                    className="inline-block px-6 py-3 text-[0.7rem] tracking-[0.22em] uppercase"
+                    style={{
+                      fontFamily: "Jost",
+                      fontWeight: 400,
+                      background: p.chipBg,
+                      border: `1px solid ${p.chipBorder}`,
+                      color: p.chipText,
+                    }}
+                  >
+                    Sold Out
+                  </span>
                 ) : (
                   <a href="#waitlist" className="btn-teal-outline">Join the Waitlist</a>
                 )}
