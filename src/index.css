@@ -16,25 +16,25 @@
     --popover: 140 9% 4%;
     --popover-foreground: 36 24% 92%;
 
-    --primary: 173 100% 45%;          /* #00e5c8 teal */
+    --primary: 168 26% 62%;           /* soft dusty seafoam — replaces electric teal */
     --primary-foreground: 140 9% 4%;
-    --primary-glow: 173 100% 45%;
+    --primary-glow: 168 32% 70%;
 
-    --secondary: 9 41% 64%;           /* #c9847a blush */
+    --secondary: 12 38% 68%;          /* warm blush */
     --secondary-foreground: 140 9% 4%;
 
     --muted: 140 8% 10%;
-    --muted-foreground: 36 14% 75%;   /* warm white at lower opacity */
+    --muted-foreground: 36 14% 75%;
 
-    --accent: 173 100% 45%;
+    --accent: 28 32% 70%;             /* warm sand accent */
     --accent-foreground: 140 9% 4%;
 
-    --destructive: 0 70% 55%;
+    --destructive: 0 60% 55%;
     --destructive-foreground: 36 24% 92%;
 
-    --border: 173 60% 25%;
+    --border: 168 18% 22%;
     --input: 140 10% 12%;
-    --ring: 173 100% 45%;
+    --ring: 168 26% 62%;
 
     --radius: 0.25rem;
   }
