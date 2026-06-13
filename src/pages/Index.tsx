@@ -5,7 +5,7 @@ import Calendar from "@/components/Calendar";
 import CommunitySection from "@/components/CommunitySection";
 import WaitlistSection from "@/components/WaitlistSection";
 import { useReveal } from "@/hooks/useReveal";
-import womanProfile from "@/assets/woman-profile.jpg";
+import womanBack from "@/assets/woman-back.jpg";
 import pillarMove from "@/assets/pillar-move.jpg";
 import pillarGather from "@/assets/pillar-gather.jpg";
 import pillarExpand from "@/assets/pillar-expand.jpg";
