@@ -6,20 +6,13 @@ const PHASE_MS = 3000; // 3s per phase, 3s crossfade, 9s loop
 
 type Phase = 0 | 1 | 2;
 
-const phaseMeta: Record<Phase, { accent: string; meta: string }> = {
-  0: {
-    accent: "#ff2638",
-    meta: "[ METRIC // 01 . THE FIRE . HIGH-INTENSITY PILATES ]",
-  },
-  1: {
-    accent: "#f0c27a",
-    meta: "[ REGULATION // 02 . THE CLARITY . GROUNDING YOGA ]",
-  },
-  2: {
-    accent: "#3fb8c4",
-    meta: "[ ARCHITECTURE // 03 . THE STILLNESS . MENTAL RESET ]",
-  },
+const phaseMeta: Record<Phase, { accent: string }> = {
+  0: { accent: "#ff2638" },
+  1: { accent: "#f0c27a" },
+  2: { accent: "#3fb8c4" },
 };
+
+const TAGLINE = "STILL — A COPPAHANDGOLD MORNING";
 
 const HeroSlideshow = () => {
   const [phase, setPhase] = useState<Phase>(0);
@@ -132,9 +125,6 @@ const HeroSlideshow = () => {
 
         {/* Static content — locked, no slide */}
         <div className="absolute left-0 right-0 bottom-0 px-8 md:pl-[60px] md:pr-12 pb-16 md:pb-[100px] max-w-4xl">
-          <div className="label-teal mb-6" style={{ color: accent, transition: "color 1500ms ease" }}>
-            CIRCLE — A COPPAHANDGOLD EXPERIENCE
-          </div>
           <h1
             className="serif text-foreground leading-[0.95] mb-5"
             style={{ fontWeight: 300, fontSize: "clamp(3.4rem, 7vw, 6.8rem)" }}
@@ -143,22 +133,21 @@ const HeroSlideshow = () => {
             <span className="italic-serif">change you.</span>
           </h1>
 
-          {/* Metadata — phase-synced */}
+          {/* Tagline — static text, color cycles with phase */}
           <div
-            className="mb-8 h-4 overflow-visible"
+            className="mb-8"
             style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
           >
             <span
-              key={phase}
-              className="inline-block uppercase animate-fade-in"
+              className="inline-block uppercase"
               style={{
-                fontSize: "0.62rem",
+                fontSize: "0.68rem",
                 letterSpacing: "0.32em",
                 color: accent,
                 transition: "color 1500ms ease",
               }}
             >
-              {phaseMeta[phase].meta}
+              {TAGLINE}
             </span>
           </div>
 
