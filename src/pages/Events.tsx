@@ -51,7 +51,7 @@ const events: EventCard[] = [
     status: "soon",
     name: "Founders' Table",
     description: "Builders. Conversation. Connection. A room for the ones quietly making things happen.",
-    details: "August 2026 · Abuja · Price TBD · Limited",
+    details: "September 2026 · Abuja · Price TBD · Limited",
     tags: ["Builders", "Conversation", "Connection"],
     accent: "brown",
   },
