@@ -145,6 +145,7 @@ const HeroSlideshow = () => {
                 letterSpacing: "0.32em",
                 color: accent,
                 transition: "color 1500ms ease",
+                whiteSpace: "nowrap",
               }}
             >
               {TAGLINE}
