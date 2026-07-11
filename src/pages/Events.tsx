@@ -25,9 +25,9 @@ const events: EventCard[] = [
   {
     status: "soon",
     name: "Still",
-    description: "Fire. Clarity. Stillness. A morning architected in three movements — high-intensity pilates, grounding yoga, and a mental reset. One room. Three lights.",
-    details: "July 2026 · Abuja · Price TBD · Limited",
-    tags: ["Pilates", "Yoga", "Mental Reset", "Morning"],
+    description: "A closed-door morning experience built around four elements of human alignment — Fire, Air, Water, Earth — engineered for total nervous system decompression. No performance. Just reset.",
+    details: "August 2026 · Abuja · 15 Women · By Reservation",
+    tags: ["Barre", "Yin Yoga", "Lymphatic Drainage", "Nourishment"],
     accent: "teal",
   },
   {
