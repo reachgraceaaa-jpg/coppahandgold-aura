@@ -202,19 +202,7 @@ const HeroSlideshow = () => {
       )}
 
       <style>{`
-        @keyframes causticsDrift {
-          0%   { transform: translate(0, 0) scale(1); }
-          50%  { transform: translate(-12px, 6px) scale(1.05); }
-          100% { transform: translate(0, 0) scale(1); }
-        }
-        @keyframes causticsDrift2 {
-          0%   { transform: translate(0, 0) scale(1.02); }
-          50%  { transform: translate(14px, -8px) scale(1); }
-          100% { transform: translate(0, 0) scale(1.02); }
-        }
-        .caustics   { animation: causticsDrift 9s ease-in-out infinite; }
-        .caustics-2 { animation: causticsDrift2 11s ease-in-out infinite; }
-      `}</style>
+
     </>
   );
 };
