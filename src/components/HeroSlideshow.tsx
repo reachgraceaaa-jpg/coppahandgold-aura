@@ -199,7 +199,7 @@ const HeroSlideshow = () => {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle at 15% 20%, rgba(201,132,122,0.08), transparent 50%), radial-gradient(circle at 85% 85%, rgba(0,229,200,0.06), transparent 55%)",
+                "radial-gradient(circle at 15% 20%, rgba(198,178,155,0.08), transparent 50%), radial-gradient(circle at 85% 85%, rgba(196,204,209,0.06), transparent 55%)",
             }}
           />
           <div className="relative max-w-6xl mx-auto">

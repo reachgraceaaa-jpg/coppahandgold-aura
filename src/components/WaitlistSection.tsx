@@ -48,7 +48,7 @@ const WaitlistSection = ({
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle at 12% 12%, rgba(201,132,122,0.09), transparent 50%), radial-gradient(circle at 88% 88%, rgba(0,229,200,0.07), transparent 50%)",
+            "radial-gradient(circle at 12% 12%, rgba(198,178,155,0.09), transparent 50%), radial-gradient(circle at 88% 88%, rgba(196,204,209,0.07), transparent 50%)",
         }}
       />
       <div className="relative max-w-2xl mx-auto reveal">

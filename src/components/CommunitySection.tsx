@@ -17,7 +17,7 @@ const CommunitySection = () => (
   <section className="relative px-8 md:px-14 py-[100px] overflow-hidden">
     <div
       className="absolute inset-0 pointer-events-none"
-      style={{ background: "radial-gradient(circle at 50% 50%, rgba(201,132,122,0.08), transparent 55%)" }}
+      style={{ background: "radial-gradient(circle at 50% 50%, rgba(198,178,155,0.08), transparent 55%)" }}
     />
     <div className="relative max-w-5xl mx-auto text-center">
       <h2 className="serif italic-serif reveal mb-6" style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.5vw, 3rem)" }}>

@@ -19,16 +19,16 @@ const dayLetters = ["S", "M", "T", "W", "T", "F", "S"];
 
 const toneStyles: Record<NonNullable<WeekEvent["tone"]>, { bg: string; border: string; text: string; glow: string }> = {
   teal: {
-    bg: "rgba(0,229,200,0.18)",
-    border: "rgba(0,229,200,0.55)",
+    bg: "rgba(196,204,209,0.18)",
+    border: "rgba(196,204,209,0.55)",
     text: "hsl(var(--primary))",
-    glow: "0 0 18px rgba(0,229,200,0.25)",
+    glow: "0 0 18px rgba(196,204,209,0.25)",
   },
   blush: {
-    bg: "rgba(201,132,122,0.22)",
-    border: "rgba(201,132,122,0.6)",
+    bg: "rgba(198,178,155,0.22)",
+    border: "rgba(198,178,155,0.6)",
     text: "#e9b3ab",
-    glow: "0 0 18px rgba(201,132,122,0.25)",
+    glow: "0 0 18px rgba(198,178,155,0.25)",
   },
   silver: {
     bg: "rgba(220,220,220,0.10)",
@@ -113,7 +113,7 @@ const WeekCalendar = ({ weekLabel, rangeLabel, events, active = false }: WeekCal
           <span className="w-2 h-2 rounded-full" style={{ background: "hsl(var(--primary))" }} /> Move
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full" style={{ background: "#c9847a" }} /> Gather
+          <span className="w-2 h-2 rounded-full" style={{ background: "#c6b29b" }} /> Gather
         </span>
         <span className="flex items-center gap-1.5">
           <span className="w-2 h-2 rounded-full" style={{ background: "rgba(240,237,232,0.7)" }} /> Expand
