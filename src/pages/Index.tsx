@@ -48,11 +48,11 @@ const Index = () => {
       {/* Manifesto strip */}
       <section
         className="relative border-t border-b py-[90px] px-8 text-center overflow-hidden"
-        style={{ borderColor: "rgba(0,229,200,0.12)" }}
+        style={{ borderColor: "rgba(196,204,209,0.12)" }}
       >
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(circle at 30% 50%, rgba(201,132,122,0.07), transparent 55%), radial-gradient(circle at 75% 50%, rgba(0,229,200,0.04), transparent 60%)" }}
+          style={{ background: "radial-gradient(circle at 30% 50%, rgba(198,178,155,0.07), transparent 55%), radial-gradient(circle at 75% 50%, rgba(196,204,209,0.04), transparent 60%)" }}
         />
         <p className="relative italic-serif max-w-[760px] mx-auto reveal" style={{ fontWeight: 300, fontSize: "clamp(1.4rem, 2.6vw, 2.1rem)", lineHeight: 1.4 }}>
           We don't sell experiences. We <span className="text-primary not-italic serif">architect</span> the moments women carry with them.
@@ -63,11 +63,11 @@ const Index = () => {
       <section className="grid md:grid-cols-2 min-h-[660px]">
         <div className="relative overflow-hidden min-h-[420px]">
           <img src={womanBack} alt="Woman from behind in an architectural space" loading="lazy" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.55) saturate(0.72) contrast(0.92)", transform: "scale(1.05)", transformOrigin: "center center" }} />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(201,132,122,0.18), transparent 55%, hsl(var(--background)) 100%)" }} />
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(8,10,9,0.55) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(198,178,155,0.18), transparent 55%, hsl(var(--background)) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(14,15,16,0.55) 100%)" }} />
         </div>
         <div className="relative px-8 md:px-[70px] py-[90px] flex flex-col justify-center">
-          <div className="absolute left-0 top-[90px] bottom-[90px] w-px" style={{ background: "linear-gradient(to bottom, rgba(0,229,200,0.5), rgba(201,132,122,0.45))" }} />
+          <div className="absolute left-0 top-[90px] bottom-[90px] w-px" style={{ background: "linear-gradient(to bottom, rgba(196,204,209,0.5), rgba(198,178,155,0.45))" }} />
           <div className="label-teal mb-10 reveal">WHO THIS IS FOR</div>
           <div className="space-y-6">
             {identityLines.map((line, i) => (
@@ -100,8 +100,8 @@ const Index = () => {
               style={{ filter: "brightness(0.32) saturate(0.55)" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 110%, rgba(201,132,122,0.18), transparent 55%)" }} />
-            <div className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" style={{ background: "rgba(8,10,9,0.25)" }} />
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 110%, rgba(198,178,155,0.18), transparent 55%)" }} />
+            <div className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" style={{ background: "rgba(14,15,16,0.25)" }} />
             <div className="absolute left-9 right-9 bottom-9">
               <div className="label-teal mb-4">{p.tag}</div>
               <h3 className="serif italic-serif text-foreground mb-4" style={{ fontWeight: 300, fontSize: "clamp(1.5rem, 2vw, 1.9rem)", lineHeight: 1.15 }}>
@@ -119,7 +119,7 @@ const Index = () => {
 
       {/* Our Why */}
       <section className="relative px-8 md:px-14 py-[120px] overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 40%, rgba(201,132,122,0.10), transparent 55%)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 40%, rgba(198,178,155,0.10), transparent 55%)" }} />
         <div className="relative max-w-[760px] mx-auto text-center reveal">
           <div className="label-teal mb-10">OUR WHY</div>
           <h2 className="serif italic-serif mb-10" style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.5vw, 3rem)", lineHeight: 1.2 }}>

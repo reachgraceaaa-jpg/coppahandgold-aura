@@ -19,18 +19,18 @@ const dayLetters = ["S", "M", "T", "W", "T", "F", "S"];
 
 const tonePalette = {
   teal: {
-    bg: "rgba(0,229,200,0.22)",
-    border: "rgba(0,229,200,0.55)",
+    bg: "rgba(196,204,209,0.22)",
+    border: "rgba(196,204,209,0.55)",
     text: "hsl(var(--primary))",
     dot: "hsl(var(--primary))",
-    glow: "0 0 14px rgba(0,229,200,0.30)",
+    glow: "0 0 14px rgba(196,204,209,0.30)",
   },
   blush: {
-    bg: "rgba(201,132,122,0.28)",
-    border: "rgba(201,132,122,0.60)",
+    bg: "rgba(198,178,155,0.28)",
+    border: "rgba(198,178,155,0.60)",
     text: "#e9b3ab",
-    dot: "#c9847a",
-    glow: "0 0 14px rgba(201,132,122,0.28)",
+    dot: "#c6b29b",
+    glow: "0 0 14px rgba(198,178,155,0.28)",
   },
   silver: {
     bg: "rgba(150,160,170,0.32)",

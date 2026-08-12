@@ -60,16 +60,16 @@ const events: EventCard[] = [
 const accentPalette: Record<EventCard["accent"], { glow: string; edge: string; chipBg: string; chipBorder: string; chipText: string }> = {
   mauve: {
     glow: "rgba(170,115,125,0.28)",
-    edge: "rgba(201,132,122,0.55)",
-    chipBg: "rgba(201,132,122,0.08)",
-    chipBorder: "rgba(201,132,122,0.40)",
+    edge: "rgba(198,178,155,0.55)",
+    chipBg: "rgba(198,178,155,0.08)",
+    chipBorder: "rgba(198,178,155,0.40)",
     chipText: "#e9b3ab",
   },
   teal: {
-    glow: "rgba(0,229,200,0.20)",
-    edge: "rgba(0,229,200,0.50)",
-    chipBg: "rgba(0,229,200,0.06)",
-    chipBorder: "rgba(0,229,200,0.35)",
+    glow: "rgba(196,204,209,0.20)",
+    edge: "rgba(196,204,209,0.50)",
+    chipBg: "rgba(196,204,209,0.06)",
+    chipBorder: "rgba(196,204,209,0.35)",
     chipText: "hsl(var(--primary))",
   },
   green: {
