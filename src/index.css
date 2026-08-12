@@ -7,34 +7,37 @@
 @layer base {
   :root {
     /* CoppahandGold design tokens — all HSL */
-    --background: 210 8% 6%;          /* cool charcoal */
-    --foreground: 36 18% 92%;
+    --background: 25 6% 9%;           /* warm graphite / wet concrete */
+    --foreground: 30 16% 93%;
 
-    --card: 210 8% 9%;
-    --card-foreground: 36 18% 92%;
+    --card: 25 6% 12%;
+    --card-foreground: 30 16% 93%;
 
-    --popover: 210 8% 6%;
-    --popover-foreground: 36 18% 92%;
+    --popover: 25 6% 9%;
+    --popover-foreground: 30 16% 93%;
 
-    --primary: 200 13% 79%;           /* #c4ccd1 brushed steel */
-    --primary-foreground: 210 8% 6%;
-    --primary-glow: 200 20% 88%;
+    --primary: 205 10% 82%;           /* brushed steel */
+    --primary-foreground: 25 6% 9%;
+    --primary-glow: 205 16% 90%;
 
-    --secondary: 31 25% 69%;          /* #c6b29b warm sand */
-    --secondary-foreground: 210 8% 6%;
+    --secondary: 28 22% 74%;          /* warm plaster */
+    --secondary-foreground: 25 6% 9%;
 
-    --muted: 210 8% 12%;
-    --muted-foreground: 36 10% 74%;
+    --muted: 25 6% 15%;
+    --muted-foreground: 30 10% 76%;
 
-    --accent: 31 25% 69%;
-    --accent-foreground: 210 8% 6%;
+    --accent: 8 34% 76%;              /* soft blush */
+    --accent-foreground: 25 6% 9%;
 
-    --destructive: 0 60% 52%;
-    --destructive-foreground: 36 18% 92%;
+    --blush: 8 34% 76%;
+    --sand: 28 22% 74%;
 
-    --border: 200 10% 30%;
-    --input: 210 8% 13%;
-    --ring: 200 13% 79%;
+    --destructive: 0 55% 55%;
+    --destructive-foreground: 30 16% 93%;
+
+    --border: 25 8% 32%;
+    --input: 25 6% 15%;
+    --ring: 205 10% 82%;
 
     --radius: 0.25rem;
   }
