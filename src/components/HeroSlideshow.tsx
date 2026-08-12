@@ -119,7 +119,7 @@ const HeroSlideshow = () => {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(180deg, rgba(8,10,9,0.45) 0%, rgba(8,10,9,0.15) 35%, rgba(8,10,9,0.75) 78%, rgba(8,10,9,0.97) 100%)",
+              "linear-gradient(180deg, rgba(14,15,16,0.45) 0%, rgba(14,15,16,0.15) 35%, rgba(14,15,16,0.75) 78%, rgba(14,15,16,0.97) 100%)",
           }}
         />
 

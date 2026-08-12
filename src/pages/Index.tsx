@@ -64,7 +64,7 @@ const Index = () => {
         <div className="relative overflow-hidden min-h-[420px]">
           <img src={womanBack} alt="Woman from behind in an architectural space" loading="lazy" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.55) saturate(0.72) contrast(0.92)", transform: "scale(1.05)", transformOrigin: "center center" }} />
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(198,178,155,0.18), transparent 55%, hsl(var(--background)) 100%)" }} />
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(8,10,9,0.55) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(14,15,16,0.55) 100%)" }} />
         </div>
         <div className="relative px-8 md:px-[70px] py-[90px] flex flex-col justify-center">
           <div className="absolute left-0 top-[90px] bottom-[90px] w-px" style={{ background: "linear-gradient(to bottom, rgba(196,204,209,0.5), rgba(198,178,155,0.45))" }} />
@@ -101,7 +101,7 @@ const Index = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
             <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 110%, rgba(198,178,155,0.18), transparent 55%)" }} />
-            <div className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" style={{ background: "rgba(8,10,9,0.25)" }} />
+            <div className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" style={{ background: "rgba(14,15,16,0.25)" }} />
             <div className="absolute left-9 right-9 bottom-9">
               <div className="label-teal mb-4">{p.tag}</div>
               <h3 className="serif italic-serif text-foreground mb-4" style={{ fontWeight: 300, fontSize: "clamp(1.5rem, 2vw, 1.9rem)", lineHeight: 1.15 }}>
