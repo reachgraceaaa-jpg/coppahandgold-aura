@@ -38,7 +38,7 @@ const HeroSlideshow = () => {
           src={heroImg}
           alt="Beige STILL poster taped inside a brushed steel elevator"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.78) saturate(0.85) contrast(1.04)" }}
+          style={{ filter: "brightness(0.95) saturate(0.9) contrast(1.04)" }}
         />
 
         {/* Phase 1 — cool steel sheen */}
