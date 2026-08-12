@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-1.jpg";
 import MonthCalendar from "./MonthCalendar";
 
-const PHASE_MS = 3000; // 3s per phase, 3s crossfade, 9s loop
+const PHASE_MS = 4000; // slow steel light drift
 
 type Phase = 0 | 1 | 2;
 
 const phaseMeta: Record<Phase, { accent: string }> = {
-  0: { accent: "#ff2638" },
-  1: { accent: "#f0c27a" },
-  2: { accent: "#3fb8c4" },
+  0: { accent: "#c4ccd1" },
+  1: { accent: "#c6b29b" },
+  2: { accent: "#9fb0b8" },
 };
 
 const TAGLINE = "STILL — A COPPAHANDGOLD MORNING";
