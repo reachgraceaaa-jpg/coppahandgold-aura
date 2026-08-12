@@ -79,7 +79,7 @@ const HeroSlideshow = () => {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(180deg, rgba(14,15,16,0.55) 0%, rgba(14,15,16,0.10) 30%, rgba(14,15,16,0.80) 76%, rgba(14,15,16,0.98) 100%)",
+              "linear-gradient(180deg, rgba(24,22,20,0.55) 0%, rgba(24,22,20,0.10) 30%, rgba(24,22,20,0.80) 76%, rgba(24,22,20,0.98) 100%)",
           }}
         />
 
@@ -160,7 +160,7 @@ const HeroSlideshow = () => {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle at 15% 20%, rgba(198,178,155,0.08), transparent 50%), radial-gradient(circle at 85% 85%, rgba(196,204,209,0.06), transparent 55%)",
+                "radial-gradient(circle at 15% 20%, rgba(198,178,155,0.08), transparent 50%), radial-gradient(circle at 85% 85%, rgba(214,169,159,0.07), transparent 55%)",
             }}
           />
           <div className="relative max-w-6xl mx-auto">
