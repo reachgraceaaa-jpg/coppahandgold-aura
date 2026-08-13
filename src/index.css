@@ -6,41 +6,45 @@
 
 @layer base {
   :root {
-    /* CoppahandGold design tokens — all HSL */
-    --background: 25 6% 9%;           /* warm graphite / wet concrete */
-    --foreground: 30 16% 93%;
+    /* CoppahandGold — metallic charcoal / brushed steel tokens (HSL) */
+    --background: 220 8% 8%;          /* #121315 metallic charcoal */
+    --foreground: 210 12% 94%;
 
-    --card: 25 6% 12%;
-    --card-foreground: 30 16% 93%;
+    --card: 210 6% 13%;               /* #1E2022 */
+    --card-foreground: 210 12% 94%;
 
-    --popover: 25 6% 9%;
-    --popover-foreground: 30 16% 93%;
+    --popover: 210 6% 13%;
+    --popover-foreground: 210 12% 94%;
 
-    --primary: 205 10% 82%;           /* brushed steel */
-    --primary-foreground: 25 6% 9%;
-    --primary-glow: 205 16% 90%;
+    --primary: 205 10% 84%;           /* brushed steel */
+    --primary-foreground: 220 8% 8%;
+    --primary-glow: 205 16% 92%;
 
-    --secondary: 28 22% 74%;          /* warm plaster */
-    --secondary-foreground: 25 6% 9%;
+    --secondary: 214 8% 19%;          /* #2C2F33 concrete matte */
+    --secondary-foreground: 210 12% 94%;
 
-    --muted: 25 6% 15%;
-    --muted-foreground: 30 10% 76%;
+    --muted: 214 8% 19%;
+    --muted-foreground: 210 8% 74%;
 
-    --accent: 8 34% 76%;              /* soft blush */
-    --accent-foreground: 25 6% 9%;
+    --accent: 186 84% 56%;            /* functional neon cyan */
+    --accent-foreground: 220 8% 8%;
 
     --blush: 8 34% 76%;
     --sand: 28 22% 74%;
 
     --destructive: 0 55% 55%;
-    --destructive-foreground: 30 16% 93%;
+    --destructive-foreground: 210 12% 94%;
 
-    --border: 25 8% 32%;
-    --input: 25 6% 15%;
-    --ring: 205 10% 82%;
+    --border: 214 8% 24%;
+    --input: 214 8% 19%;
+    --ring: 186 84% 56%;
+
+    --gradient-steel: linear-gradient(135deg, hsl(214 8% 19%) 0%, hsl(210 6% 13%) 48%, hsl(214 9% 22%) 100%);
+    --shadow-steel: 0 24px 60px -30px hsl(220 20% 2% / 0.9);
 
     --radius: 0.25rem;
   }
+
 }
 
 @layer base {
