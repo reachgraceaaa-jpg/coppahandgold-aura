@@ -7,10 +7,11 @@ const PHASE_MS = 4000; // slow steel light drift
 type Phase = 0 | 1 | 2;
 
 const phaseMeta: Record<Phase, { accent: string }> = {
-  0: { accent: "#c4ccd1" },
-  1: { accent: "#c6b29b" },
-  2: { accent: "#9fb0b8" },
+  0: { accent: "#c9d1d6" },
+  1: { accent: "#e8dfd2" },
+  2: { accent: "#2fd8e8" },
 };
+
 
 const TAGLINE = "STILL — A COPPAHANDGOLD MORNING";
 
