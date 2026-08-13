@@ -126,46 +126,47 @@
     transform: translateY(0);
   }
 
-  /* Buttons */
+  /* Buttons — cyan reserved for interactive states */
   .btn-teal-outline {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3 text-xs uppercase tracking-[0.22em] transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.26em] transition-all duration-300;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    color: hsl(var(--primary));
-    border: 1px solid hsl(var(--primary) / 0.6);
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--accent) / 0.45);
     background: transparent;
   }
   .btn-teal-outline:hover {
-    background: hsl(var(--primary) / 0.08);
-    color: hsl(var(--foreground));
-    border-color: hsl(var(--primary));
-    box-shadow: 0 0 24px hsl(var(--primary) / 0.25);
+    background: hsl(var(--accent) / 0.07);
+    color: hsl(var(--accent));
+    border-color: hsl(var(--accent));
+    box-shadow: 0 0 26px hsl(var(--accent) / 0.22);
   }
   .btn-teal-filled {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3 text-xs uppercase tracking-[0.22em] transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.26em] transition-all duration-300;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    color: hsl(var(--primary-foreground));
-    background: hsl(var(--primary));
-    border: 1px solid hsl(var(--primary));
+    color: hsl(var(--accent-foreground));
+    background: hsl(var(--accent));
+    border: 1px solid hsl(var(--accent));
   }
   .btn-teal-filled:hover {
     background: transparent;
-    color: hsl(var(--primary));
+    color: hsl(var(--accent));
   }
   .btn-pulse {
     animation: tealPulse 2.6s ease-in-out infinite;
   }
 
   .ghost-link {
-    @apply inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] transition-colors duration-300;
+    @apply inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] transition-colors duration-300;
     font-family: 'Jost', sans-serif;
     font-weight: 300;
-    color: hsl(30 12% 92% / 0.7);
+    color: hsl(210 12% 94% / 0.7);
   }
   .ghost-link:hover {
-    color: hsl(var(--primary));
+    color: hsl(var(--accent));
   }
+
 
   /* Custom cursor */
   .cursor-dot, .cursor-ring {
