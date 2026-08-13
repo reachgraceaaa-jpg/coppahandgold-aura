@@ -43,7 +43,7 @@ const WaitlistSection = ({
   };
 
   return (
-    <section id="waitlist" className="relative px-8 md:px-14 py-[130px] text-center overflow-hidden">
+    <section id="waitlist" className="relative px-8 md:px-20 py-[130px] text-center overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

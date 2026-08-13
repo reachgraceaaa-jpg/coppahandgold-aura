@@ -6,41 +6,45 @@
 
 @layer base {
   :root {
-    /* CoppahandGold design tokens — all HSL */
-    --background: 25 6% 9%;           /* warm graphite / wet concrete */
-    --foreground: 30 16% 93%;
+    /* CoppahandGold — metallic charcoal / brushed steel tokens (HSL) */
+    --background: 220 8% 8%;          /* #121315 metallic charcoal */
+    --foreground: 210 12% 94%;
 
-    --card: 25 6% 12%;
-    --card-foreground: 30 16% 93%;
+    --card: 210 6% 13%;               /* #1E2022 */
+    --card-foreground: 210 12% 94%;
 
-    --popover: 25 6% 9%;
-    --popover-foreground: 30 16% 93%;
+    --popover: 210 6% 13%;
+    --popover-foreground: 210 12% 94%;
 
-    --primary: 205 10% 82%;           /* brushed steel */
-    --primary-foreground: 25 6% 9%;
-    --primary-glow: 205 16% 90%;
+    --primary: 205 10% 84%;           /* brushed steel */
+    --primary-foreground: 220 8% 8%;
+    --primary-glow: 205 16% 92%;
 
-    --secondary: 28 22% 74%;          /* warm plaster */
-    --secondary-foreground: 25 6% 9%;
+    --secondary: 214 8% 19%;          /* #2C2F33 concrete matte */
+    --secondary-foreground: 210 12% 94%;
 
-    --muted: 25 6% 15%;
-    --muted-foreground: 30 10% 76%;
+    --muted: 214 8% 19%;
+    --muted-foreground: 210 8% 74%;
 
-    --accent: 8 34% 76%;              /* soft blush */
-    --accent-foreground: 25 6% 9%;
+    --accent: 186 84% 56%;            /* functional neon cyan */
+    --accent-foreground: 220 8% 8%;
 
     --blush: 8 34% 76%;
     --sand: 28 22% 74%;
 
     --destructive: 0 55% 55%;
-    --destructive-foreground: 30 16% 93%;
+    --destructive-foreground: 210 12% 94%;
 
-    --border: 25 8% 32%;
-    --input: 25 6% 15%;
-    --ring: 205 10% 82%;
+    --border: 214 8% 24%;
+    --input: 214 8% 19%;
+    --ring: 186 84% 56%;
+
+    --gradient-steel: linear-gradient(135deg, hsl(214 8% 19%) 0%, hsl(210 6% 13%) 48%, hsl(214 9% 22%) 100%);
+    --shadow-steel: 0 24px 60px -30px hsl(220 20% 2% / 0.9);
 
     --radius: 0.25rem;
   }
+
 }
 
 @layer base {
@@ -83,15 +87,22 @@
     font-style: italic;
   }
   .muted-text {
-    color: hsl(30 12% 92% / 0.55);
+    color: hsl(210 12% 94% / 0.55);
   }
   .brand-mark {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.22em;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 0.42em;
     text-transform: uppercase;
     color: hsl(var(--primary));
   }
+  /* Brushed steel surface for cards / sectional wrappers */
+  .steel-surface {
+    background: var(--gradient-steel);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-steel);
+  }
+
 
   /* Grain overlay — visible film grain on dark backgrounds */
   .grain-overlay {
@@ -115,46 +126,47 @@
     transform: translateY(0);
   }
 
-  /* Buttons */
+  /* Buttons — cyan reserved for interactive states */
   .btn-teal-outline {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3 text-xs uppercase tracking-[0.22em] transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.26em] transition-all duration-300;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    color: hsl(var(--primary));
-    border: 1px solid hsl(var(--primary) / 0.6);
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--accent) / 0.45);
     background: transparent;
   }
   .btn-teal-outline:hover {
-    background: hsl(var(--primary) / 0.08);
-    color: hsl(var(--foreground));
-    border-color: hsl(var(--primary));
-    box-shadow: 0 0 24px hsl(var(--primary) / 0.25);
+    background: hsl(var(--accent) / 0.07);
+    color: hsl(var(--accent));
+    border-color: hsl(var(--accent));
+    box-shadow: 0 0 26px hsl(var(--accent) / 0.22);
   }
   .btn-teal-filled {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3 text-xs uppercase tracking-[0.22em] transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.26em] transition-all duration-300;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    color: hsl(var(--primary-foreground));
-    background: hsl(var(--primary));
-    border: 1px solid hsl(var(--primary));
+    color: hsl(var(--accent-foreground));
+    background: hsl(var(--accent));
+    border: 1px solid hsl(var(--accent));
   }
   .btn-teal-filled:hover {
     background: transparent;
-    color: hsl(var(--primary));
+    color: hsl(var(--accent));
   }
   .btn-pulse {
     animation: tealPulse 2.6s ease-in-out infinite;
   }
 
   .ghost-link {
-    @apply inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] transition-colors duration-300;
+    @apply inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] transition-colors duration-300;
     font-family: 'Jost', sans-serif;
     font-weight: 300;
-    color: hsl(30 12% 92% / 0.7);
+    color: hsl(210 12% 94% / 0.7);
   }
   .ghost-link:hover {
-    color: hsl(var(--primary));
+    color: hsl(var(--accent));
   }
+
 
   /* Custom cursor */
   .cursor-dot, .cursor-ring {
@@ -169,12 +181,12 @@
   .cursor-dot {
     width: 8px;
     height: 8px;
-    background: hsl(var(--primary));
+    background: hsl(var(--accent));
   }
   .cursor-ring {
     width: 32px;
     height: 32px;
-    border: 1px solid hsl(var(--primary) / 0.7);
+    border: 1px solid hsl(var(--accent) / 0.6);
     transition: transform 0.18s ease-out, width 0.2s, height 0.2s;
   }
 
@@ -182,17 +194,17 @@
     @apply w-full bg-transparent px-4 py-3 text-sm text-foreground placeholder:text-foreground/40 transition-colors duration-300;
     font-family: 'Jost', sans-serif;
     font-weight: 300;
-    border: 1px solid hsl(var(--primary) / 0.18);
+    border: 1px solid hsl(var(--border));
   }
   .input-dark:focus {
     outline: none;
-    border-color: hsl(var(--primary));
+    border-color: hsl(var(--accent));
   }
 }
 
 @keyframes tealPulse {
-  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4); }
-  50% { box-shadow: 0 0 28px 4px hsl(var(--primary) / 0.35); }
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.4); }
+  50% { box-shadow: 0 0 28px 4px hsl(var(--accent) / 0.35); }
 }
 
 @keyframes crossfade {
