@@ -81,13 +81,14 @@ const HeroSlideshow = () => {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(180deg, rgba(24,22,20,0.55) 0%, rgba(24,22,20,0.10) 30%, rgba(24,22,20,0.80) 76%, rgba(24,22,20,0.98) 100%)",
+              "linear-gradient(180deg, hsl(220 8% 8% / 0.62) 0%, hsl(220 8% 8% / 0.10) 32%, hsl(220 8% 8% / 0.82) 76%, hsl(220 8% 8%) 100%)",
           }}
         />
 
 
         {/* Static content — locked, no slide */}
-        <div className="absolute left-0 right-0 bottom-0 px-8 md:pl-[60px] md:pr-12 pb-16 md:pb-[100px] max-w-4xl">
+        <div className="absolute left-0 right-0 bottom-0 px-8 md:pl-[96px] md:pr-16 pb-20 md:pb-[132px] max-w-4xl">
+
           <h1
             className="serif text-foreground leading-[0.95] mb-5"
             style={{ fontWeight: 300, fontSize: "clamp(3.4rem, 7vw, 6.8rem)" }}
