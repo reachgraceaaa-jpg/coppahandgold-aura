@@ -87,15 +87,22 @@
     font-style: italic;
   }
   .muted-text {
-    color: hsl(30 12% 92% / 0.55);
+    color: hsl(210 12% 94% / 0.55);
   }
   .brand-mark {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.22em;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 0.42em;
     text-transform: uppercase;
     color: hsl(var(--primary));
   }
+  /* Brushed steel surface for cards / sectional wrappers */
+  .steel-surface {
+    background: var(--gradient-steel);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-steel);
+  }
+
 
   /* Grain overlay — visible film grain on dark backgrounds */
   .grain-overlay {
