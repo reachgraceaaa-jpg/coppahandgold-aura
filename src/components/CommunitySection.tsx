@@ -14,7 +14,7 @@ const points = [
 ];
 
 const CommunitySection = () => (
-  <section className="relative px-8 md:px-14 py-[100px] overflow-hidden">
+  <section className="relative px-8 md:px-20 py-[100px] overflow-hidden">
     <div
       className="absolute inset-0 pointer-events-none"
       style={{ background: "radial-gradient(circle at 50% 50%, rgba(198,178,155,0.08), transparent 55%)" }}

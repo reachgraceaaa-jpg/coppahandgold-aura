@@ -47,7 +47,7 @@ const Index = () => {
 
       {/* Manifesto strip */}
       <section
-        className="relative border-t border-b py-[90px] px-8 text-center overflow-hidden"
+        className="relative border-t border-b py-[120px] px-8 text-center overflow-hidden"
         style={{ borderColor: "rgba(196,204,209,0.12)" }}
       >
         <div
@@ -66,7 +66,7 @@ const Index = () => {
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(198,178,155,0.18), transparent 55%, hsl(var(--background)) 100%)" }} />
           <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 30% 50%, transparent 30%, rgba(24,22,20,0.55) 100%)" }} />
         </div>
-        <div className="relative px-8 md:px-[70px] py-[90px] flex flex-col justify-center">
+        <div className="relative px-8 md:px-[96px] py-[120px] flex flex-col justify-center">
           <div className="absolute left-0 top-[90px] bottom-[90px] w-px" style={{ background: "linear-gradient(to bottom, rgba(196,204,209,0.5), rgba(214,169,159,0.45))" }} />
           <div className="label-teal mb-10 reveal">WHO THIS IS FOR</div>
           <div className="space-y-6">
@@ -81,7 +81,7 @@ const Index = () => {
       </section>
 
       {/* Three pillars */}
-      <section className="px-8 md:px-14 py-[120px]">
+      <section className="px-8 md:px-20 py-[160px]">
         <div className="max-w-6xl mx-auto mb-16 reveal">
           <div className="label-teal mb-6">THE WORLD OF COPPAHANDGOLD</div>
           <h2 className="serif" style={{ fontWeight: 300, fontSize: "clamp(2.4rem, 4.5vw, 4rem)", lineHeight: 1.05 }}>
@@ -118,7 +118,7 @@ const Index = () => {
       <CommunitySection />
 
       {/* Our Why */}
-      <section className="relative px-8 md:px-14 py-[120px] overflow-hidden">
+      <section className="relative px-8 md:px-20 py-[160px] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 40%, rgba(214,169,159,0.10), transparent 55%)" }} />
         <div className="relative max-w-[760px] mx-auto text-center reveal">
           <div className="label-teal mb-10">OUR WHY</div>

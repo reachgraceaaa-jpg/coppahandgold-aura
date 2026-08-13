@@ -102,7 +102,7 @@ const Events = () => {
       <Navigation />
 
       {/* Hero */}
-      <section className="px-8 md:px-14 pt-[180px] pb-[120px]">
+      <section className="px-8 md:px-20 pt-[180px] pb-[120px]">
         <div className="max-w-5xl reveal">
           <div className="label-teal mb-8">WHAT'S IN THE ROOM</div>
           <h1 className="serif mb-8" style={{ fontWeight: 300, fontSize: "clamp(2.8rem, 5vw, 4rem)", lineHeight: 1.05 }}>
@@ -115,7 +115,7 @@ const Events = () => {
       </section>
 
       {/* Event cards */}
-      <section className="px-8 md:px-14 pb-[120px]">
+      <section className="px-8 md:px-20 pb-[120px]">
         <div className="max-w-5xl mx-auto space-y-6">
           {events.map((e, i) => {
             const p = accentPalette[e.accent];
