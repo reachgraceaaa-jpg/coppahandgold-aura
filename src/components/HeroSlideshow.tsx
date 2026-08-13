@@ -37,10 +37,11 @@ const HeroSlideshow = () => {
         {/* Base steel canvas */}
         <img
           src={heroImg}
-          alt="Beige STILL poster taped inside a brushed steel elevator"
+          alt="Ivory STILL — A CoppahandGold Morning poster mounted on a brushed steel and concrete gallery wall"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.95) saturate(0.9) contrast(1.04)" }}
+          style={{ filter: "brightness(0.9) saturate(0.72) contrast(1.06)" }}
         />
+
 
         {/* Phase 1 — cool steel sheen */}
         <div
