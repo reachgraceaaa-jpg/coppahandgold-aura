@@ -123,6 +123,26 @@ const HeroSlideshow = () => {
             We curate the ones worth being in.
           </p>
           <div className="flex flex-wrap items-center gap-6 md:gap-8">
+            <a
+              href="https://selar.com/2oc15eky63"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer uppercase"
+              style={{
+                fontFamily: "Jost",
+                fontWeight: 400,
+                fontSize: "0.72rem",
+                letterSpacing: "0.24em",
+                padding: "14px 28px",
+                color: "hsl(var(--background))",
+                background: "hsl(var(--primary))",
+                border: "1px solid hsl(var(--primary))",
+                boxShadow: `0 0 0 1px ${accent}22, 0 0 28px ${accent}55, inset 0 0 18px ${accent}1a`,
+                transition: "border-color 1500ms ease, box-shadow 1500ms ease, color 1500ms ease",
+              }}
+            >
+              Book Still
+            </a>
             <button
               type="button"
               onClick={() => {
