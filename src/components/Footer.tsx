@@ -9,7 +9,7 @@ const Footer = () => (
       <p className="muted-text text-xs italic-serif text-center max-w-md">
         An ecosystem built at the intersection of wellness and legacy.
       </p>
-      <Link to="/events" className="ghost-link">See Events →</Link>
+      <Link to="/events" className="ghost-link">View experience calendar →</Link>
     </div>
     <div className="mt-10 text-center text-xs muted-text tracking-[0.22em] uppercase">
       coppahandgold.org
