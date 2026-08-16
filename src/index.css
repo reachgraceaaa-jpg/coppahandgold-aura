@@ -127,20 +127,20 @@
     transform: translateY(0);
   }
 
-  /* Buttons — cyan reserved for interactive states */
+  /* Buttons — burgundy reserved for interactive states */
   .btn-teal-outline {
     @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.26em] transition-all duration-300;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     color: hsl(var(--foreground));
-    border: 1px solid hsl(var(--accent) / 0.45);
+    border: 1px solid hsl(var(--accent-soft) / 0.45);
     background: transparent;
   }
   .btn-teal-outline:hover {
-    background: hsl(var(--accent) / 0.07);
-    color: hsl(var(--accent));
-    border-color: hsl(var(--accent));
-    box-shadow: 0 0 26px hsl(var(--accent) / 0.22);
+    background: hsl(var(--accent) / 0.18);
+    color: hsl(var(--accent-soft));
+    border-color: hsl(var(--accent-soft));
+    box-shadow: 0 0 26px hsl(var(--accent) / 0.35);
   }
   .btn-teal-filled {
     @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.26em] transition-all duration-300;
@@ -152,7 +152,8 @@
   }
   .btn-teal-filled:hover {
     background: transparent;
-    color: hsl(var(--accent));
+    color: hsl(var(--accent-soft));
+    border-color: hsl(var(--accent-soft));
   }
   .btn-pulse {
     animation: tealPulse 2.6s ease-in-out infinite;
