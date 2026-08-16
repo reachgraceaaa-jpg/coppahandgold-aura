@@ -28,6 +28,7 @@
 
     --accent: 349 58% 34%;            /* dark burgundy */
     --accent-foreground: 30 25% 94%;
+    --accent-soft: 349 42% 60%;       /* legible burgundy for text/hover */
 
     --blush: 8 34% 76%;
     --sand: 28 22% 74%;
