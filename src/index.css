@@ -200,7 +200,7 @@
   }
   .input-dark:focus {
     outline: none;
-    border-color: hsl(var(--accent));
+    border-color: hsl(var(--accent-soft));
   }
 }
 
