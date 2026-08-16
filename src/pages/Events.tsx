@@ -67,11 +67,11 @@ const accentPalette: Record<EventCard["accent"], { glow: string; edge: string; c
     chipText: "#e9b3ab",
   },
   teal: {
-    glow: "rgba(196,204,209,0.20)",
-    edge: "rgba(196,204,209,0.50)",
-    chipBg: "rgba(196,204,209,0.06)",
-    chipBorder: "rgba(196,204,209,0.35)",
-    chipText: "hsl(var(--primary))",
+    glow: "rgba(139,29,52,0.32)",
+    edge: "rgba(160,60,80,0.50)",
+    chipBg: "rgba(139,29,52,0.10)",
+    chipBorder: "rgba(170,80,100,0.45)",
+    chipText: "#d38b98",
   },
   green: {
     glow: "rgba(120,160,130,0.25)",
