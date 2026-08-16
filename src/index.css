@@ -166,7 +166,7 @@
     color: hsl(210 12% 94% / 0.7);
   }
   .ghost-link:hover {
-    color: hsl(var(--accent));
+    color: hsl(var(--accent-soft));
   }
 
 
