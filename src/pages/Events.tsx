@@ -111,6 +111,9 @@ const Events = () => {
           <p className="muted-text max-w-xl" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.9rem", lineHeight: 1.8 }}>
             Each room is designed around a feeling, not a formula. Here's what's coming.
           </p>
+          <div className="mt-10">
+            <Link to="/circle" className="btn-teal-outline">Explore Circle</Link>
+          </div>
         </div>
       </section>
 
