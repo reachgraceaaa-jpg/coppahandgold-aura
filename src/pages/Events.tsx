@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import CommunitySection from "@/components/CommunitySection";
@@ -66,11 +67,11 @@ const accentPalette: Record<EventCard["accent"], { glow: string; edge: string; c
     chipText: "#e9b3ab",
   },
   teal: {
-    glow: "rgba(196,204,209,0.20)",
-    edge: "rgba(196,204,209,0.50)",
-    chipBg: "rgba(196,204,209,0.06)",
-    chipBorder: "rgba(196,204,209,0.35)",
-    chipText: "hsl(var(--primary))",
+    glow: "rgba(139,29,52,0.32)",
+    edge: "rgba(160,60,80,0.50)",
+    chipBg: "rgba(139,29,52,0.10)",
+    chipBorder: "rgba(170,80,100,0.45)",
+    chipText: "#d38b98",
   },
   green: {
     glow: "rgba(120,160,130,0.25)",
@@ -111,6 +112,9 @@ const Events = () => {
           <p className="muted-text max-w-xl" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.9rem", lineHeight: 1.8 }}>
             Each room is designed around a feeling, not a formula. Here's what's coming.
           </p>
+          <div className="mt-10">
+            <Link to="/circle" className="btn-teal-outline">Explore Circle</Link>
+          </div>
         </div>
       </section>
 

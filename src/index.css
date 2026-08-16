@@ -26,8 +26,9 @@
     --muted: 214 8% 19%;
     --muted-foreground: 210 8% 74%;
 
-    --accent: 186 84% 56%;            /* functional neon cyan */
-    --accent-foreground: 220 8% 8%;
+    --accent: 349 58% 34%;            /* dark burgundy */
+    --accent-foreground: 30 25% 94%;
+    --accent-soft: 349 42% 60%;       /* legible burgundy for text/hover */
 
     --blush: 8 34% 76%;
     --sand: 28 22% 74%;
@@ -37,7 +38,7 @@
 
     --border: 214 8% 24%;
     --input: 214 8% 19%;
-    --ring: 186 84% 56%;
+    --ring: 349 58% 34%;
 
     --gradient-steel: linear-gradient(135deg, hsl(214 8% 19%) 0%, hsl(210 6% 13%) 48%, hsl(214 9% 22%) 100%);
     --shadow-steel: 0 24px 60px -30px hsl(220 20% 2% / 0.9);
@@ -126,20 +127,20 @@
     transform: translateY(0);
   }
 
-  /* Buttons — cyan reserved for interactive states */
+  /* Buttons — burgundy reserved for interactive states */
   .btn-teal-outline {
     @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.26em] transition-all duration-300;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     color: hsl(var(--foreground));
-    border: 1px solid hsl(var(--accent) / 0.45);
+    border: 1px solid hsl(var(--accent-soft) / 0.45);
     background: transparent;
   }
   .btn-teal-outline:hover {
-    background: hsl(var(--accent) / 0.07);
-    color: hsl(var(--accent));
-    border-color: hsl(var(--accent));
-    box-shadow: 0 0 26px hsl(var(--accent) / 0.22);
+    background: hsl(var(--accent) / 0.18);
+    color: hsl(var(--accent-soft));
+    border-color: hsl(var(--accent-soft));
+    box-shadow: 0 0 26px hsl(var(--accent) / 0.35);
   }
   .btn-teal-filled {
     @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 text-xs uppercase tracking-[0.26em] transition-all duration-300;
@@ -151,7 +152,8 @@
   }
   .btn-teal-filled:hover {
     background: transparent;
-    color: hsl(var(--accent));
+    color: hsl(var(--accent-soft));
+    border-color: hsl(var(--accent-soft));
   }
   .btn-pulse {
     animation: tealPulse 2.6s ease-in-out infinite;
@@ -164,7 +166,7 @@
     color: hsl(210 12% 94% / 0.7);
   }
   .ghost-link:hover {
-    color: hsl(var(--accent));
+    color: hsl(var(--accent-soft));
   }
 
 
@@ -181,12 +183,12 @@
   .cursor-dot {
     width: 8px;
     height: 8px;
-    background: hsl(var(--accent));
+    background: hsl(var(--accent-soft));
   }
   .cursor-ring {
     width: 32px;
     height: 32px;
-    border: 1px solid hsl(var(--accent) / 0.6);
+    border: 1px solid hsl(var(--accent-soft) / 0.6);
     transition: transform 0.18s ease-out, width 0.2s, height 0.2s;
   }
 
@@ -198,7 +200,7 @@
   }
   .input-dark:focus {
     outline: none;
-    border-color: hsl(var(--accent));
+    border-color: hsl(var(--accent-soft));
   }
 }
 

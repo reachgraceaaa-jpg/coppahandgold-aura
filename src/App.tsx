@@ -5,8 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Events from "./pages/Events.tsx";
-import ConesAndCode from "./pages/ConesAndCode.tsx";
-import BuildTonight from "./pages/BuildTonight.tsx";
+import Circle from "./pages/Circle.tsx";
 import Psychle from "./pages/Psychle.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import CustomCursor from "./components/CustomCursor";
@@ -24,9 +23,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/cones-and-code-welcome" element={<ConesAndCode />} />
-          <Route path="/cones-and-code" element={<BuildTonight />} />
-          <Route path="/build" element={<BuildTonight />} />
+          <Route path="/circle" element={<Circle />} />
           <Route path="/psychle" element={<Psychle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
