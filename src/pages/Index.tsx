@@ -128,6 +128,9 @@ const Index = () => {
           <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.95rem", lineHeight: 1.95 }}>
             CoppahandGold exists because the right room changes everything. We are not an events company. We are building a world — where the experience is unexpected, the women in it are remarkable, and every room leaves you more than it found you. Starting in Abuja. Built for everywhere.
           </p>
+          <div className="mt-12">
+            <Link to="/circle" className="btn-teal-outline">Enter the Circle</Link>
+          </div>
         </div>
       </section>
 
