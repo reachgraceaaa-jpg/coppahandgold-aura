@@ -15,7 +15,7 @@ const Navigation = () => {
         <div className="flex items-center gap-5 md:gap-10 text-[0.65rem] md:text-xs uppercase tracking-[0.22em] md:tracking-[0.28em]" style={{ fontFamily: "Jost", fontWeight: 300 }}>
           <Link to="/" className={`transition-colors ${pathname === "/" ? "text-primary" : "text-foreground/70 hover:text-primary"}`}>Home</Link>
           <Link to="/events" className={`transition-colors ${pathname === "/events" ? "text-primary" : "text-foreground/70 hover:text-primary"}`}>Experience</Link>
-          <Link to="/cones-and-code" className={`transition-colors ${pathname.startsWith("/cones-and-code") || pathname === "/build" ? "text-primary" : "text-foreground/70 hover:text-primary"}`}>Cones &amp; Code</Link>
+          <Link to="/circle" className={`transition-colors ${pathname === "/circle" ? "text-primary" : "text-foreground/70 hover:text-primary"}`}>Circle</Link>
         </div>
         <Link to="/events" className="btn-teal-outline text-[0.65rem] hidden md:inline-flex">View experience calendar</Link>
       </nav>
