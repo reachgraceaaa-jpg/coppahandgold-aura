@@ -3,7 +3,7 @@ import heroImg from "@/assets/hero-1.jpg";
 import MonthCalendar from "./MonthCalendar";
 
 const TAGLINE = "STILL — A COPPAHANDGOLD MORNING";
-// Fixed burgundy accent — no color cycling
+// Fixed burgundy ACCENT — no color cycling
 const ACCENT = "#9a5b64";
 const ACCENT_DEEP = "#562429";
 
@@ -63,7 +63,7 @@ const HeroSlideshow = () => {
               style={{
                 fontSize: "0.68rem",
                 letterSpacing: "0.32em",
-                color: accent,
+                color: ACCENT,
                 transition: "color 1500ms ease",
                 whiteSpace: "nowrap",
               }}
@@ -93,7 +93,7 @@ const HeroSlideshow = () => {
                 color: "hsl(var(--background))",
                 background: "hsl(var(--primary))",
                 border: "1px solid hsl(var(--primary))",
-                boxShadow: `0 0 0 1px ${accent}22, 0 0 28px ${accent}55, inset 0 0 18px ${accent}1a`,
+                boxShadow: `0 0 0 1px ${ACCENT}22, 0 0 28px ${ACCENT}55, inset 0 0 18px ${ACCENT}1a`,
                 transition: "border-color 1500ms ease, box-shadow 1500ms ease, color 1500ms ease",
               }}
             >
@@ -114,8 +114,8 @@ const HeroSlideshow = () => {
                 padding: "14px 28px",
                 color: "hsl(var(--foreground))",
                 background: "transparent",
-                border: `1px solid ${accent}`,
-                boxShadow: `0 0 0 1px ${accent}22, 0 0 28px ${accent}55, inset 0 0 18px ${accent}1a`,
+                border: `1px solid ${ACCENT}`,
+                boxShadow: `0 0 0 1px ${ACCENT}22, 0 0 28px ${ACCENT}55, inset 0 0 18px ${ACCENT}1a`,
                 transition: "border-color 1500ms ease, box-shadow 1500ms ease, color 1500ms ease",
               }}
             >
