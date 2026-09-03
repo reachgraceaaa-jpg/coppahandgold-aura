@@ -1,35 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import heroImg from "@/assets/hero-1.jpg";
 import MonthCalendar from "./MonthCalendar";
 
-const PHASE_MS = 4000; // slow steel light drift
-
-type Phase = 0 | 1 | 2;
-
-const phaseMeta: Record<Phase, { accent: string }> = {
-  0: { accent: "#c9d1d6" },
-  1: { accent: "#e8dfd2" },
-  2: { accent: "#2fd8e8" },
-};
-
-
 const TAGLINE = "STILL — A COPPAHANDGOLD MORNING";
+// Fixed burgundy ACCENT — no color cycling
+const ACCENT = "#9a5b64";
+const ACCENT_DEEP = "#562429";
 
 const HeroSlideshow = () => {
-  const [phase, setPhase] = useState<Phase>(0);
   const [showCalendar, setShowCalendar] = useState(false);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setPhase((p) => ((p + 1) % 3) as Phase);
-    }, PHASE_MS);
-    return () => clearInterval(id);
-  }, []);
-
-  // Toggle to calendar view every ~27s? Keep calendar as separate scroll-into anchor below
-  // Actually per spec, keep typography static. We'll keep the calendar as a second hero section below.
-
-  const accent = phaseMeta[phase].accent;
 
   return (
     <>
@@ -43,35 +22,12 @@ const HeroSlideshow = () => {
         />
 
 
-        {/* Phase 1 — cool steel sheen */}
+        {/* Static soft burgundy sheen */}
         <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-[3000ms] ease-in-out"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            opacity: phase === 0 ? 1 : 0,
             background:
-              "radial-gradient(ellipse at 50% 20%, rgba(196,204,209,0.16) 0%, transparent 60%)",
-            mixBlendMode: "screen",
-          }}
-        />
-
-        {/* Phase 2 — warm sand light */}
-        <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-[3000ms] ease-in-out"
-          style={{
-            opacity: phase === 1 ? 1 : 0,
-            background:
-              "radial-gradient(ellipse at 55% 35%, rgba(198,178,155,0.18) 0%, transparent 62%), linear-gradient(100deg, transparent 35%, rgba(214,196,172,0.12) 48%, transparent 60%)",
-            mixBlendMode: "screen",
-          }}
-        />
-
-        {/* Phase 3 — quiet blue-grey dusk */}
-        <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-[3000ms] ease-in-out"
-          style={{
-            opacity: phase === 2 ? 1 : 0,
-            background:
-              "radial-gradient(ellipse at 45% 60%, rgba(140,164,176,0.14) 0%, transparent 62%)",
+              "radial-gradient(ellipse at 50% 25%, rgba(154,91,100,0.12) 0%, transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(86,36,41,0.20) 0%, transparent 55%)",
             mixBlendMode: "screen",
           }}
         />
@@ -107,7 +63,7 @@ const HeroSlideshow = () => {
               style={{
                 fontSize: "0.68rem",
                 letterSpacing: "0.32em",
-                color: accent,
+                color: ACCENT,
                 transition: "color 1500ms ease",
                 whiteSpace: "nowrap",
               }}
@@ -134,11 +90,11 @@ const HeroSlideshow = () => {
                 fontSize: "0.72rem",
                 letterSpacing: "0.24em",
                 padding: "14px 28px",
-                color: "hsl(var(--background))",
-                background: "hsl(var(--primary))",
-                border: "1px solid hsl(var(--primary))",
-                boxShadow: `0 0 0 1px ${accent}22, 0 0 28px ${accent}55, inset 0 0 18px ${accent}1a`,
-                transition: "border-color 1500ms ease, box-shadow 1500ms ease, color 1500ms ease",
+                color: "#f4e9e6",
+                background: ACCENT_DEEP,
+                border: `1px solid ${ACCENT}`,
+                boxShadow: `0 0 0 1px ${ACCENT}33, 0 0 32px ${ACCENT}66, inset 0 0 18px ${ACCENT}22`,
+                transition: "box-shadow 300ms ease, transform 300ms ease",
               }}
             >
               Join STILL
@@ -158,8 +114,8 @@ const HeroSlideshow = () => {
                 padding: "14px 28px",
                 color: "hsl(var(--foreground))",
                 background: "transparent",
-                border: `1px solid ${accent}`,
-                boxShadow: `0 0 0 1px ${accent}22, 0 0 28px ${accent}55, inset 0 0 18px ${accent}1a`,
+                border: `1px solid ${ACCENT}`,
+                boxShadow: `0 0 0 1px ${ACCENT}22, 0 0 28px ${ACCENT}55, inset 0 0 18px ${ACCENT}1a`,
                 transition: "border-color 1500ms ease, box-shadow 1500ms ease, color 1500ms ease",
               }}
             >
