@@ -6,12 +6,13 @@ import WaitlistSection from "@/components/WaitlistSection";
 import { useReveal } from "@/hooks/useReveal";
 
 interface EventCard {
-  status: "experienced" | "soon";
+  status: "experienced" | "live" | "soon";
   name: string;
   description: string;
   details: string;
   tags: string[];
   accent: "mauve" | "teal" | "green" | "silver" | "brown";
+  ticketUrl?: string;
 }
 
 const events: EventCard[] = [
@@ -24,12 +25,13 @@ const events: EventCard[] = [
     accent: "mauve",
   },
   {
-    status: "soon",
+    status: "live",
     name: "Still",
     description: "A closed-door morning experience built around four elements of human alignment — Fire, Air, Water, Earth — engineered for total nervous system decompression. No performance. Just reset.",
-    details: "August 2026 · Abuja · 15 Women · By Reservation",
+    details: "September 2026 · Abuja · 15 Women · By Reservation",
     tags: ["Barre", "Yin Yoga", "Lymphatic Drainage", "Nourishment"],
     accent: "teal",
+    ticketUrl: "https://selar.com/2oc15eky63",
   },
   {
     status: "soon",
@@ -166,6 +168,19 @@ const Events = () => {
                     >
                       Experienced
                     </span>
+                  ) : e.status === "live" ? (
+                    <span
+                      className="inline-block px-3 py-1 text-[0.6rem] tracking-[0.22em] uppercase"
+                      style={{
+                        fontFamily: "Jost",
+                        fontWeight: 400,
+                        background: p.chipBg,
+                        border: `1px solid ${p.chipBorder}`,
+                        color: p.chipText,
+                      }}
+                    >
+                      LIVE
+                    </span>
                   ) : (
                     <span
                       className="inline-block px-3 py-1 text-[0.6rem] tracking-[0.22em] uppercase"
@@ -227,6 +242,8 @@ const Events = () => {
                   >
                     Sold Out
                   </span>
+                ) : e.status === "live" && e.ticketUrl ? (
+                  <a href={e.ticketUrl} target="_blank" rel="noopener noreferrer" className="btn-teal-outline">Join</a>
                 ) : (
                   <a href="#waitlist" className="btn-teal-outline">Join the Waitlist</a>
                 )}

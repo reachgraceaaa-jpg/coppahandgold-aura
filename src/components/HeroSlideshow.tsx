@@ -141,7 +141,7 @@ const HeroSlideshow = () => {
                 transition: "border-color 1500ms ease, box-shadow 1500ms ease, color 1500ms ease",
               }}
             >
-              Book Still
+              Join STILL
             </a>
             <button
               type="button"
@@ -163,7 +163,7 @@ const HeroSlideshow = () => {
                 transition: "border-color 1500ms ease, box-shadow 1500ms ease, color 1500ms ease",
               }}
             >
-              Join the Waitlist
+              Join
             </button>
             <button
               type="button"
@@ -199,7 +199,7 @@ const HeroSlideshow = () => {
                 monthName="July"
                 year={2026}
                 monthIndex={6}
-                events={[{ start: 26, end: 31, label: "Still", tone: "teal" }]}
+                events={[]}
               />
               <MonthCalendar
                 monthName="August"
@@ -214,7 +214,10 @@ const HeroSlideshow = () => {
                 monthName="September"
                 year={2026}
                 monthIndex={8}
-                events={[{ start: 13, end: 19, label: "Founders' Table", tone: "brown" }]}
+                events={[
+                  { start: 13, end: 19, label: "Founders' Table", tone: "brown" },
+                  { start: 26, end: 30, label: "Still", tone: "teal" },
+                ]}
               />
             </div>
             <div className="text-center mt-14">
