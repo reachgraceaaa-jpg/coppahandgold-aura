@@ -90,11 +90,11 @@ const HeroSlideshow = () => {
                 fontSize: "0.72rem",
                 letterSpacing: "0.24em",
                 padding: "14px 28px",
-                color: "hsl(var(--background))",
-                background: "hsl(var(--primary))",
-                border: "1px solid hsl(var(--primary))",
-                boxShadow: `0 0 0 1px ${ACCENT}22, 0 0 28px ${ACCENT}55, inset 0 0 18px ${ACCENT}1a`,
-                transition: "border-color 1500ms ease, box-shadow 1500ms ease, color 1500ms ease",
+                color: "#f4e9e6",
+                background: ACCENT_DEEP,
+                border: `1px solid ${ACCENT}`,
+                boxShadow: `0 0 0 1px ${ACCENT}33, 0 0 32px ${ACCENT}66, inset 0 0 18px ${ACCENT}22`,
+                transition: "box-shadow 300ms ease, transform 300ms ease",
               }}
             >
               Join STILL
