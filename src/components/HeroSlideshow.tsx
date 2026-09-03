@@ -172,7 +172,7 @@ const HeroSlideshow = () => {
                 monthIndex={8}
                 events={[
                   { start: 13, end: 19, label: "Founders' Table", tone: "brown" },
-                  { start: 26, end: 30, label: "Still", tone: "teal" },
+                  { start: 26, end: 30, label: "STILL", tone: "teal" },
                 ]}
               />
             </div>
