@@ -1,35 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import heroImg from "@/assets/hero-1.jpg";
 import MonthCalendar from "./MonthCalendar";
 
-const PHASE_MS = 4000; // slow steel light drift
-
-type Phase = 0 | 1 | 2;
-
-const phaseMeta: Record<Phase, { accent: string }> = {
-  0: { accent: "#c9d1d6" },
-  1: { accent: "#e8dfd2" },
-  2: { accent: "#2fd8e8" },
-};
-
-
 const TAGLINE = "STILL — A COPPAHANDGOLD MORNING";
+// Fixed burgundy accent — no color cycling
+const ACCENT = "#9a5b64";
+const ACCENT_DEEP = "#562429";
 
 const HeroSlideshow = () => {
-  const [phase, setPhase] = useState<Phase>(0);
   const [showCalendar, setShowCalendar] = useState(false);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setPhase((p) => ((p + 1) % 3) as Phase);
-    }, PHASE_MS);
-    return () => clearInterval(id);
-  }, []);
-
-  // Toggle to calendar view every ~27s? Keep calendar as separate scroll-into anchor below
-  // Actually per spec, keep typography static. We'll keep the calendar as a second hero section below.
-
-  const accent = phaseMeta[phase].accent;
 
   return (
     <>
