@@ -22,35 +22,12 @@ const HeroSlideshow = () => {
         />
 
 
-        {/* Phase 1 — cool steel sheen */}
+        {/* Static soft burgundy sheen */}
         <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-[3000ms] ease-in-out"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            opacity: phase === 0 ? 1 : 0,
             background:
-              "radial-gradient(ellipse at 50% 20%, rgba(196,204,209,0.16) 0%, transparent 60%)",
-            mixBlendMode: "screen",
-          }}
-        />
-
-        {/* Phase 2 — warm sand light */}
-        <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-[3000ms] ease-in-out"
-          style={{
-            opacity: phase === 1 ? 1 : 0,
-            background:
-              "radial-gradient(ellipse at 55% 35%, rgba(198,178,155,0.18) 0%, transparent 62%), linear-gradient(100deg, transparent 35%, rgba(214,196,172,0.12) 48%, transparent 60%)",
-            mixBlendMode: "screen",
-          }}
-        />
-
-        {/* Phase 3 — quiet blue-grey dusk */}
-        <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-[3000ms] ease-in-out"
-          style={{
-            opacity: phase === 2 ? 1 : 0,
-            background:
-              "radial-gradient(ellipse at 45% 60%, rgba(140,164,176,0.14) 0%, transparent 62%)",
+              "radial-gradient(ellipse at 50% 25%, rgba(154,91,100,0.12) 0%, transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(86,36,41,0.20) 0%, transparent 55%)",
             mixBlendMode: "screen",
           }}
         />
