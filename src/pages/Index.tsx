@@ -130,7 +130,7 @@ const Index = () => {
             CoppahandGold exists because the right room changes everything. We are not an events company. We are building a world — where the experience is unexpected, the women in it are remarkable, and every room leaves you more than it found you. Starting in Abuja. Built for everywhere.
           </p>
           <div className="mt-12">
-            <Link to="/circle" className="btn-teal-outline">Enter the Circle</Link>
+            <Link to="/circle" className="btn-teal-outline">Join the Circle</Link>
           </div>
         </div>
       </section>
