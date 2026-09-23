@@ -23,6 +23,7 @@ Deno.serve(async (req) => {
     const last = clean(body.last, 100);
     const email = clean(body.email, 255);
     const phone = clean(body.phone, 50);
+    const industry = clean(body.industry, 300);
 
     if (!first || !email || !isEmail(email)) {
       return new Response(JSON.stringify({ error: "Please share your name and a valid email." }), {
