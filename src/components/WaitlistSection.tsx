@@ -7,6 +7,9 @@ interface Props {
   headlineLine1?: string;
   headlineLine2?: string;
   subline?: string;
+  submitLabel?: string;
+  disclaimer?: string;
+  successMessage?: string;
 }
 
 const WaitlistSection = ({
@@ -14,9 +17,13 @@ const WaitlistSection = ({
   headlineLine1 = "Be first",
   headlineLine2 = "in the room.",
   subline = "CoppahandGold experiences are limited by design. That's how we protect the quality of the room. The waitlist is how you stay ahead.",
+  submitLabel = "Secure My Spot",
+  disclaimer = "No noise. Just the rooms worth knowing about.",
+  successMessage,
 }: Props) => {
   const [form, setForm] = useState({ first: "", last: "", email: "", phone: "" });
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
