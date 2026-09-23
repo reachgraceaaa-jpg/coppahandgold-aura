@@ -7,6 +7,9 @@ interface Props {
   headlineLine1?: string;
   headlineLine2?: string;
   subline?: string;
+  submitLabel?: string;
+  disclaimer?: string;
+  successMessage?: string;
 }
 
 const WaitlistSection = ({
@@ -14,9 +17,13 @@ const WaitlistSection = ({
   headlineLine1 = "Be first",
   headlineLine2 = "in the room.",
   subline = "CoppahandGold experiences are limited by design. That's how we protect the quality of the room. The waitlist is how you stay ahead.",
+  submitLabel = "Secure My Spot",
+  disclaimer = "No noise. Just the rooms worth knowing about.",
+  successMessage,
 }: Props) => {
   const [form, setForm] = useState({ first: "", last: "", email: "", phone: "" });
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,6 +41,7 @@ const WaitlistSection = ({
       }
       toast.success("You're on the list. We'll be in touch.");
       setForm({ first: "", last: "", email: "", phone: "" });
+      if (successMessage) setSubmitted(true);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Something went wrong";
       toast.error(msg);
@@ -62,16 +70,27 @@ const WaitlistSection = ({
           {subline}
         </p>
 
-        <form onSubmit={submit} className="grid md:grid-cols-2 gap-4 text-left">
-          <input className="input-dark" placeholder="First name" value={form.first} onChange={(e) => setForm({ ...form, first: e.target.value })} />
-          <input className="input-dark" placeholder="Last name" value={form.last} onChange={(e) => setForm({ ...form, last: e.target.value })} />
-          <input className="input-dark md:col-span-2" type="email" placeholder="Email address" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-          <input className="input-dark md:col-span-2" placeholder="Phone number (optional)" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
-          <div className="md:col-span-2 flex flex-col items-center gap-5 mt-4">
-            <button type="submit" disabled={submitting} className="btn-teal-filled btn-pulse disabled:opacity-60">{submitting ? "Securing…" : "Secure My Spot"}</button>
-            <p className="muted-text italic-serif text-sm">No noise. Just the rooms worth knowing about.</p>
+        {submitted && successMessage ? (
+          <div className="flex items-center justify-center min-h-[220px] px-4">
+            <p
+              className="italic-serif text-center mx-auto max-w-lg"
+              style={{ fontWeight: 300, fontSize: "clamp(1.15rem, 2vw, 1.55rem)", lineHeight: 1.6 }}
+            >
+              {successMessage}
+            </p>
           </div>
-        </form>
+        ) : (
+          <form onSubmit={submit} className="grid md:grid-cols-2 gap-x-10 gap-y-7 text-left">
+            <input className="input-dark" placeholder="First Name" value={form.first} onChange={(e) => setForm({ ...form, first: e.target.value })} />
+            <input className="input-dark" placeholder="Last Name" value={form.last} onChange={(e) => setForm({ ...form, last: e.target.value })} />
+            <input className="input-dark md:col-span-2" type="email" placeholder="Email Address" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+            <input className="input-dark md:col-span-2" placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
+            <div className="md:col-span-2 flex flex-col items-center gap-5 mt-6">
+              <button type="submit" disabled={submitting} className="btn-teal-filled btn-pulse disabled:opacity-60">{submitting ? "Securing…" : submitLabel}</button>
+              <p className="muted-text italic-serif text-sm">{disclaimer}</p>
+            </div>
+          </form>
+        )}
       </div>
     </section>
   );

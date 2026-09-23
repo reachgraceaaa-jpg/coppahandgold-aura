@@ -9,7 +9,7 @@ import circleHero from "@/assets/circle-hero.jpg";
 const forTheKindOfWoman = [
   {
     h: "Filters her rooms.",
-    p: "Someone who understands that who is in the room dictates the quality of the thinking.",
+    p: "A woman who understands that who is in the room dictates the quality of the thinking.",
   },
   {
     h: "Commands a distinct reality.",
@@ -17,30 +17,34 @@ const forTheKindOfWoman = [
   },
   {
     h: "Seeks high-vibe friction.",
-    p: "Bypassing surface-level pleasantries for sharp, deep, and functional alignment.",
+    p: "Bypassing surface-level gatherings for sharp, deep, and functional alignment.",
   },
   {
     h: "Values the aesthetic of discipline.",
-    p: "Showing up fully for strict dress codes, curated wellness, and rare spaces.",
+    p: "Showing up intentionally and ready to be of value to the room.",
   },
 ];
 
 const rhythm = [
   {
     h: "Founders Roundtable",
-    p: "Collaborative problem-solving for institutional roadblocks and business scale.",
-  },
-  {
-    h: "Global Portfolios",
-    p: "Cross-border discussions on travel, international assets, and supply networks.",
+    p: "Collaborative problem-solving for business scale, institutional roadblocks, and global expansion.",
   },
   {
     h: "Capital & Ventures",
-    p: "High-level briefings on funding, investment mechanics, and brand expansion.",
+    p: "Private briefings on funding mechanics, investment networks, and cross-border assets.",
   },
   {
     h: "Somatic Movement",
-    p: "Private studio takeovers, sound therapy, and physical restoration.",
+    p: "Closed-door wellness experiences, sound therapy, and physical nervous system regulation.",
+  },
+  {
+    h: "Themed Experiences",
+    p: "Curated outdoor setups, strict visual dress codes, and high-vibe social architecture.",
+  },
+  {
+    h: "Member Allocation",
+    p: "Member's only perks, priority access to future experiences, insider resources.",
   },
 ];
 
@@ -66,7 +70,7 @@ const Circle = () => {
       <section className="relative min-h-[92vh] flex items-end overflow-hidden">
         <img
           src={circleHero}
-          alt="Circle invitation card resting on a polished silver platter"
+          alt="Macro photograph of ivory linen folds in deep shadow"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: "brightness(0.72) contrast(1.02) saturate(0.92)" }}
         />
@@ -94,7 +98,7 @@ const Circle = () => {
             >
               Circle.
               <br />
-              <span className="italic-serif text-primary">An ongoing environment for the exceptional.</span>
+              <span className="italic-serif text-primary">A private ecosystem for women building.</span>
             </h1>
             <div className="flex flex-wrap gap-4 mt-12">
               <a href="#waitlist" className="btn-teal-filled btn-pulse">Apply for access</a>
@@ -121,7 +125,7 @@ const Circle = () => {
           <h2 className="serif mb-10" style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.6vw, 3rem)", lineHeight: 1.15 }}>
             A twice-monthly private fixture by CoppahandGold.
             <br />
-            <span className="italic-serif text-primary">Convening on the 1st and 3rd Friday of every month.</span>
+            <span className="italic-serif text-primary">Convening on the first and fourth Thursday of every month.</span>
           </h2>
           <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.92rem", lineHeight: 1.95 }}>
             The locations alter. The themes shift. The caliber remains absolute.
@@ -203,16 +207,19 @@ const Circle = () => {
             Capped strictly at 15–20 entries per evening.
           </h2>
           <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.9rem", lineHeight: 1.9 }}>
-            Non-diluted. Invitation or verified alignment check only.
+            Strictly limited to a few women. Access slots open once a month to keep our community intimate.
           </p>
         </div>
       </section>
 
       <WaitlistSection
         label="APPLY FOR ACCESS"
-        headlineLine1="Request a seat"
-        headlineLine2="at the Circle."
+        headlineLine1="Join the"
+        headlineLine2="CIRCLE."
         subline="Entries are reviewed for alignment. If the room is right for you, we'll reach out with the next convening."
+        submitLabel="SUBMIT"
+        disclaimer="No noise. Just the rooms worth being in."
+        successMessage="Details received. Our concierge team will reach out with the community documentation."
       />
       <Footer />
     </main>
