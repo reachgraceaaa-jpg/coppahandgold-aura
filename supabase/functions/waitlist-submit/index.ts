@@ -51,7 +51,7 @@ Deno.serve(async (req) => {
               fields: "userEnteredValue",
               rows: [
                 {
-                  values: [timestamp, first, last, email, phone].map(cell),
+                  values: [timestamp, first, last, email, phone, industry].map(cell),
                 },
               ],
             },
