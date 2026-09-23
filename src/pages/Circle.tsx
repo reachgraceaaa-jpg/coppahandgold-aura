@@ -204,10 +204,10 @@ const Circle = () => {
         <div className="relative max-w-2xl mx-auto text-center reveal">
           <div className="label-teal mb-10">THE BOUNDARY</div>
           <h2 className="serif italic-serif mb-8" style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.6vw, 3rem)", lineHeight: 1.2 }}>
-            Capped strictly at 15–20 entries per evening.
+            We protect the integrity of the room.
           </h2>
           <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.9rem", lineHeight: 1.9 }}>
-            Strictly limited to a few women. Access slots open once a month to keep our community intimate.
+            The Circle is strictly members-only. Membership is reserved for women who share the vision.
           </p>
         </div>
       </section>
@@ -217,6 +217,7 @@ const Circle = () => {
         headlineLine1="Join the"
         headlineLine2="CIRCLE."
         subline="Entries are reviewed for alignment. If the room is right for you, we'll reach out with the next convening."
+        extraFieldPlaceholder="Industry / What Are You Building?"
         submitLabel="SUBMIT"
         disclaimer="No noise. Just the rooms worth being in."
         successMessage="Details received. Our concierge team will reach out with the community documentation."
