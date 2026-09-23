@@ -70,7 +70,7 @@ const Circle = () => {
       <section className="relative min-h-[92vh] flex items-end overflow-hidden">
         <img
           src={circleHero}
-          alt="Circle invitation card resting on a polished silver platter"
+          alt="Macro photograph of ivory linen folds in deep shadow"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: "brightness(0.72) contrast(1.02) saturate(0.92)" }}
         />
@@ -98,7 +98,7 @@ const Circle = () => {
             >
               Circle.
               <br />
-              <span className="italic-serif text-primary">An ongoing environment for the exceptional.</span>
+              <span className="italic-serif text-primary">A private ecosystem for women building.</span>
             </h1>
             <div className="flex flex-wrap gap-4 mt-12">
               <a href="#waitlist" className="btn-teal-filled btn-pulse">Apply for access</a>
@@ -125,7 +125,7 @@ const Circle = () => {
           <h2 className="serif mb-10" style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.6vw, 3rem)", lineHeight: 1.15 }}>
             A twice-monthly private fixture by CoppahandGold.
             <br />
-            <span className="italic-serif text-primary">Convening on the 1st and 3rd Friday of every month.</span>
+            <span className="italic-serif text-primary">Convening on the first and fourth Thursday of every month.</span>
           </h2>
           <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.92rem", lineHeight: 1.95 }}>
             The locations alter. The themes shift. The caliber remains absolute.
