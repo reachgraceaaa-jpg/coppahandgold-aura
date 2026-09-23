@@ -9,7 +9,7 @@ import circleHero from "@/assets/circle-hero.jpg";
 const forTheKindOfWoman = [
   {
     h: "Filters her rooms.",
-    p: "Someone who understands that who is in the room dictates the quality of the thinking.",
+    p: "A woman who understands that who is in the room dictates the quality of the thinking.",
   },
   {
     h: "Commands a distinct reality.",
@@ -17,30 +17,34 @@ const forTheKindOfWoman = [
   },
   {
     h: "Seeks high-vibe friction.",
-    p: "Bypassing surface-level pleasantries for sharp, deep, and functional alignment.",
+    p: "Bypassing surface-level gatherings for sharp, deep, and functional alignment.",
   },
   {
     h: "Values the aesthetic of discipline.",
-    p: "Showing up fully for strict dress codes, curated wellness, and rare spaces.",
+    p: "Showing up intentionally and ready to be of value to the room.",
   },
 ];
 
 const rhythm = [
   {
     h: "Founders Roundtable",
-    p: "Collaborative problem-solving for institutional roadblocks and business scale.",
-  },
-  {
-    h: "Global Portfolios",
-    p: "Cross-border discussions on travel, international assets, and supply networks.",
+    p: "Collaborative problem-solving for business scale, institutional roadblocks, and global expansion.",
   },
   {
     h: "Capital & Ventures",
-    p: "High-level briefings on funding, investment mechanics, and brand expansion.",
+    p: "Private briefings on funding mechanics, investment networks, and cross-border assets.",
   },
   {
     h: "Somatic Movement",
-    p: "Private studio takeovers, sound therapy, and physical restoration.",
+    p: "Closed-door wellness experiences, sound therapy, and physical nervous system regulation.",
+  },
+  {
+    h: "Themed Experiences",
+    p: "Curated outdoor setups, strict visual dress codes, and high-vibe social architecture.",
+  },
+  {
+    h: "Member Allocation",
+    p: "Member's only perks, priority access to future experiences, insider resources.",
   },
 ];
 
