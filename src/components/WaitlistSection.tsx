@@ -41,6 +41,7 @@ const WaitlistSection = ({
       }
       toast.success("You're on the list. We'll be in touch.");
       setForm({ first: "", last: "", email: "", phone: "" });
+      if (successMessage) setSubmitted(true);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Something went wrong";
       toast.error(msg);
