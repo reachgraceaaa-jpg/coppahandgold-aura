@@ -10,6 +10,7 @@ interface Props {
   submitLabel?: string;
   disclaimer?: string;
   successMessage?: string;
+  extraFieldPlaceholder?: string;
 }
 
 const WaitlistSection = ({
@@ -20,8 +21,9 @@ const WaitlistSection = ({
   submitLabel = "Secure My Spot",
   disclaimer = "No noise. Just the rooms worth knowing about.",
   successMessage,
+  extraFieldPlaceholder,
 }: Props) => {
-  const [form, setForm] = useState({ first: "", last: "", email: "", phone: "" });
+  const [form, setForm] = useState({ first: "", last: "", email: "", phone: "", industry: "" });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -40,7 +42,7 @@ const WaitlistSection = ({
         throw new Error((data && data.error) || error?.message || "Something went wrong");
       }
       toast.success("You're on the list. We'll be in touch.");
-      setForm({ first: "", last: "", email: "", phone: "" });
+      setForm({ first: "", last: "", email: "", phone: "", industry: "" });
       if (successMessage) setSubmitted(true);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Something went wrong";
@@ -85,6 +87,9 @@ const WaitlistSection = ({
             <input className="input-dark" placeholder="Last Name" value={form.last} onChange={(e) => setForm({ ...form, last: e.target.value })} />
             <input className="input-dark md:col-span-2" type="email" placeholder="Email Address" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
             <input className="input-dark md:col-span-2" placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
+            {extraFieldPlaceholder && (
+              <input className="input-dark md:col-span-2" placeholder={extraFieldPlaceholder} value={form.industry} onChange={(e) => setForm({ ...form, industry: e.target.value })} />
+            )}
             <div className="md:col-span-2 flex flex-col items-center gap-5 mt-6">
               <button type="submit" disabled={submitting} className="btn-teal-filled btn-pulse disabled:opacity-60">{submitting ? "Securing…" : submitLabel}</button>
               <p className="muted-text italic-serif text-sm">{disclaimer}</p>
