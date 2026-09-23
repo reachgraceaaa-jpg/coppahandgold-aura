@@ -207,16 +207,19 @@ const Circle = () => {
             Capped strictly at 15–20 entries per evening.
           </h2>
           <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.9rem", lineHeight: 1.9 }}>
-            Non-diluted. Invitation or verified alignment check only.
+            Strictly limited to a few women. Access slots open once a month to keep our community intimate.
           </p>
         </div>
       </section>
 
       <WaitlistSection
         label="APPLY FOR ACCESS"
-        headlineLine1="Request a seat"
-        headlineLine2="at the Circle."
+        headlineLine1="Join the"
+        headlineLine2="CIRCLE."
         subline="Entries are reviewed for alignment. If the room is right for you, we'll reach out with the next convening."
+        submitLabel="SUBMIT"
+        disclaimer="No noise. Just the rooms worth being in."
+        successMessage="Details received. Our concierge team will reach out with the community documentation."
       />
       <Footer />
     </main>
