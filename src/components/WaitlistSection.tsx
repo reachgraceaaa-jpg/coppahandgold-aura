@@ -10,6 +10,7 @@ interface Props {
   submitLabel?: string;
   disclaimer?: string;
   successMessage?: string;
+  extraFieldPlaceholder?: string;
 }
 
 const WaitlistSection = ({
@@ -20,8 +21,9 @@ const WaitlistSection = ({
   submitLabel = "Secure My Spot",
   disclaimer = "No noise. Just the rooms worth knowing about.",
   successMessage,
+  extraFieldPlaceholder,
 }: Props) => {
-  const [form, setForm] = useState({ first: "", last: "", email: "", phone: "" });
+  const [form, setForm] = useState({ first: "", last: "", email: "", phone: "", industry: "" });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
