@@ -220,7 +220,8 @@ const Circle = () => {
         extraFieldPlaceholder="Industry / What Are You Building?"
         submitLabel="SUBMIT"
         disclaimer="No noise. Just the rooms worth being in."
-        successMessage="Details received. Our concierge team will reach out with the community documentation."
+        phonePlaceholder="Phone Number"
+        successMessage="Details received. Our concierge team will reach out to you"
       />
       <Footer />
     </main>
