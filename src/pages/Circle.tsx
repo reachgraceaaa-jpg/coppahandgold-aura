@@ -27,7 +27,7 @@ const forTheKindOfWoman = [
 const rhythm = [
   {
     h: "Founders Roundtable",
-    p: "working through real problems together: how to grow, what is stuck, and what it takes to scale.",
+    p: "Working through real problems together: how to grow, what is stuck, and what it takes to scale.",
   },
   {
     h: "Capital & Ventures",
@@ -113,7 +113,7 @@ const Circle = () => {
             >
               Circle.
               <br />
-              <span className="italic-serif text-primary">A private ecosystem for women who are building.</span>
+              <span className="italic-serif text-primary">A private ecosystem for women building.</span>
             </h1>
             <p className="muted-text italic-serif max-w-md mt-6" style={{ fontWeight: 300, fontSize: "clamp(1.1rem, 1.7vw, 1.35rem)", lineHeight: 1.55 }}>
               Where ambition and wellness share a room.
@@ -140,11 +140,12 @@ const Circle = () => {
         />
         <div className="relative max-w-3xl mx-auto text-center reveal">
           <div className="label-teal mb-8">THE ANCHOR</div>
-          <h2 className="serif mb-10" style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.6vw, 3rem)", lineHeight: 1.15 }}>
+          <h2 className="serif mb-6" style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.6vw, 3rem)", lineHeight: 1.15 }}>
             A monthly private gathering by CoppahandGold.
-            <br />
-            <span className="italic-serif text-primary">The locations change. The themes shift. The caliber remains absolute.</span>
           </h2>
+          <p className="muted-text italic-serif" style={{ fontWeight: 300, fontSize: "clamp(1rem, 1.5vw, 1.2rem)", lineHeight: 1.6 }}>
+            The locations change. The themes shift. The caliber remains absolute.
+          </p>
         </div>
       </section>
 
@@ -233,7 +234,7 @@ const Circle = () => {
         subline="Entries are reviewed for alignment. If the room is right for you, we'll reach out with the next convening."
         extraFieldPlaceholder="Industry / What Are You Building?"
         submitLabel="SUBMIT"
-        disclaimer="No noise. Just the rooms worth being in."
+        disclaimer="No noise. Just the rooms worth being."
         phonePlaceholder="Phone Number"
         successMessage="Welcome to Circle. We'll be in touch."
       />
