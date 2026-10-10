@@ -27,11 +27,11 @@ const CommunitySection = () => (
         We don't have a list of rules. We have a way of being. If these feel familiar, you're already one of us.
       </p>
 
-      <div className="grid md:grid-cols-3 gap-12 text-left">
+      <div className="grid md:grid-cols-3 gap-16 md:gap-14 text-left">
         {points.map((pt, i) => (
           <div key={i} className="reveal" style={{ transitionDelay: `${i * 120}ms` }}>
-            <div className="w-2 h-2 rounded-full bg-primary mb-6" />
-            <h3 className="italic-serif text-2xl mb-4" style={{ fontWeight: 300 }}>{pt.h}</h3>
+            <div className="w-2 h-2 rounded-full bg-primary mb-8" />
+            <h3 className="italic-serif text-2xl mb-6" style={{ fontWeight: 300 }}>{pt.h}</h3>
             <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.85rem", lineHeight: 1.8 }}>{pt.p}</p>
           </div>
         ))}

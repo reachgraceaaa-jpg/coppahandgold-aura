@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WaitlistSection from "@/components/WaitlistSection";
@@ -16,8 +15,8 @@ const forTheKindOfWoman = [
     p: "Actively masterminding a brand, a body, an investment, or a legacy.",
   },
   {
-    h: "Seeks high-vibe friction.",
-    p: "Bypassing surface-level gatherings for sharp, deep, and functional alignment.",
+    h: "Wants sharper conversation.",
+    p: "Skips small talk for conversation that is honest, specific and useful.",
   },
   {
     h: "Values the aesthetic of discipline.",
@@ -28,11 +27,11 @@ const forTheKindOfWoman = [
 const rhythm = [
   {
     h: "Founders Roundtable",
-    p: "Collaborative problem-solving for business scale, institutional roadblocks, and global expansion.",
+    p: "working through real problems together: how to grow, what is stuck, and what it takes to scale.",
   },
   {
     h: "Capital & Ventures",
-    p: "Private briefings on funding mechanics, investment networks, and cross-border assets.",
+    p: "Money targets. Honest conversations about capital: how to fund an ambition, who invests, and building wealth across borders.",
   },
   {
     h: "Somatic Movement",
@@ -50,6 +49,8 @@ const rhythm = [
 
 const Circle = () => {
   useReveal();
+  const anchorRef = useRef<HTMLElement>(null);
+  const [anchorExpanded, setAnchorExpanded] = useState(false);
 
   useEffect(() => {
     document.title = "Circle — An ongoing environment for the exceptional";
@@ -57,9 +58,23 @@ const Circle = () => {
     if (meta) {
       meta.setAttribute(
         "content",
-        "Circle by CoppahandGold — a twice-monthly private fixture for exceptional women. 1st and 3rd Friday of every month. Capped at 15–20 entries."
+        "Circle by CoppahandGold — a monthly private gathering for women building businesses, capital, wellbeing, and meaningful connections."
       );
     }
+  }, []);
+
+  useEffect(() => {
+    const updateAnchorWidth = () => {
+      const anchor = anchorRef.current;
+      if (anchor) setAnchorExpanded(anchor.getBoundingClientRect().top <= window.innerHeight * 0.52);
+    };
+    updateAnchorWidth();
+    window.addEventListener("scroll", updateAnchorWidth, { passive: true });
+    window.addEventListener("resize", updateAnchorWidth);
+    return () => {
+      window.removeEventListener("scroll", updateAnchorWidth);
+      window.removeEventListener("resize", updateAnchorWidth);
+    };
   }, []);
 
   return (
@@ -67,12 +82,12 @@ const Circle = () => {
       <Navigation />
 
       {/* Hero */}
-      <section className="relative min-h-[92vh] flex items-end overflow-hidden">
+      <section className="relative min-h-[88svh] flex items-end overflow-hidden">
         <img
           src={circleHero}
           alt="Macro photograph of ivory linen folds in deep shadow"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.72) contrast(1.02) saturate(0.92)" }}
+        style={{ filter: "brightness(0.72) contrast(1.06) saturate(0.88)" }}
         />
         <div
           className="absolute inset-0 pointer-events-none"
@@ -89,7 +104,7 @@ const Circle = () => {
           }}
         />
 
-        <div className="relative w-full px-8 md:px-24 pb-[110px] pt-[200px]">
+        <div className="relative w-full px-6 sm:px-8 md:px-24 pb-20 md:pb-[110px] pt-36 md:pt-[190px]">
           <div className="max-w-3xl">
             <div className="label-teal mb-8">AN INVITATION</div>
             <h1
@@ -98,11 +113,13 @@ const Circle = () => {
             >
               Circle.
               <br />
-              <span className="italic-serif text-primary">A private ecosystem for women building.</span>
+              <span className="italic-serif text-primary">A private ecosystem for women who are building.</span>
             </h1>
-            <div className="flex flex-wrap gap-4 mt-12">
-              <a href="#waitlist" className="btn-teal-filled btn-pulse">Apply for access</a>
-              <Link to="/events" className="btn-teal-outline">View calendar</Link>
+            <p className="muted-text italic-serif max-w-md mt-6" style={{ fontWeight: 300, fontSize: "clamp(1.1rem, 1.7vw, 1.35rem)", lineHeight: 1.55 }}>
+              Where ambition and wellness share a room.
+            </p>
+            <div className="flex flex-wrap gap-4 mt-8">
+              <a href="#waitlist" className="btn-teal-filled btn-pulse">Join Circle</a>
             </div>
           </div>
         </div>
@@ -110,7 +127,8 @@ const Circle = () => {
 
       {/* The anchor */}
       <section
-        className="relative px-8 md:px-24 py-[150px] border-t border-b"
+        ref={anchorRef}
+        className={`circle-anchor relative z-10 px-6 sm:px-8 md:px-24 py-20 md:py-[118px] border-t border-b ${anchorExpanded ? "is-expanded" : ""}`}
         style={{ borderColor: "hsl(var(--border))" }}
       >
         <div
@@ -121,15 +139,12 @@ const Circle = () => {
           }}
         />
         <div className="relative max-w-3xl mx-auto text-center reveal">
-          <div className="label-teal mb-10">THE ANCHOR</div>
+          <div className="label-teal mb-8">THE ANCHOR</div>
           <h2 className="serif mb-10" style={{ fontWeight: 300, fontSize: "clamp(2rem, 3.6vw, 3rem)", lineHeight: 1.15 }}>
-            A twice-monthly private fixture by CoppahandGold.
+            A monthly private gathering by CoppahandGold.
             <br />
-            <span className="italic-serif text-primary">Convening on the first and fourth Thursday of every month.</span>
+            <span className="italic-serif text-primary">The locations change. The themes shift. The caliber remains absolute.</span>
           </h2>
-          <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.92rem", lineHeight: 1.95 }}>
-            The locations alter. The themes shift. The caliber remains absolute.
-          </p>
         </div>
       </section>
 
@@ -165,23 +180,22 @@ const Circle = () => {
 
       {/* The rhythm */}
       <section
-        className="relative px-8 md:px-24 py-[150px] border-t"
+        className="relative px-6 sm:px-8 md:px-24 py-20 md:py-[118px] border-t"
         style={{ borderColor: "hsl(var(--border))" }}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="reveal mb-16">
+          <div className="reveal mb-12">
             <div className="label-teal mb-8">THE RHYTHM</div>
             <p className="muted-text max-w-2xl" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.9rem", lineHeight: 1.9 }}>
-              The Circle meets recurringly, but the environment is never stagnant. Every gathering
-              introduces a new focus.
+              A considered rhythm of honest conversation, shared perspective, and room to grow.
             </p>
           </div>
           <div className="space-y-px" style={{ background: "hsl(var(--border))" }}>
             {rhythm.map((r, i) => (
               <div
                 key={r.h}
-                className="grid md:grid-cols-[1fr_1.4fr] gap-6 md:gap-14 py-10 px-6 md:px-10 reveal"
-                style={{ background: "hsl(var(--background))", transitionDelay: `${i * 80}ms` }}
+                className="grid md:grid-cols-[1fr_1.4fr] gap-3 md:gap-14 py-7 md:py-9 px-5 md:px-10 reveal"
+                style={{ background: i % 2 === 0 ? "linear-gradient(115deg, hsl(var(--card) / 0.78), hsl(var(--background)))" : "hsl(var(--background))", transitionDelay: `${i * 80}ms` }}
               >
                 <h3 className="serif text-primary" style={{ fontWeight: 300, fontSize: "clamp(1.3rem, 2vw, 1.7rem)", lineHeight: 1.2 }}>
                   {r.h}
@@ -196,7 +210,7 @@ const Circle = () => {
       </section>
 
       {/* The boundary */}
-      <section className="relative px-8 md:px-24 py-[160px] overflow-hidden">
+      <section className="relative px-6 sm:px-8 md:px-24 pt-16 md:pt-20 pb-24 md:pb-[112px] overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(circle at 50% 45%, hsl(var(--accent)/0.12), transparent 58%)" }}
@@ -221,9 +235,9 @@ const Circle = () => {
         submitLabel="SUBMIT"
         disclaimer="No noise. Just the rooms worth being in."
         phonePlaceholder="Phone Number"
-        successMessage="Details received. Our concierge team will reach out to you"
+        successMessage="Welcome to Circle. We'll be in touch."
       />
-      <Footer />
+      <Footer hideCalendar />
     </main>
   );
 };

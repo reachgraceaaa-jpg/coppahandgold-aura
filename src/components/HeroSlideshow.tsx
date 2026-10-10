@@ -13,12 +13,12 @@ const HeroSlideshow = () => {
   return (
     <>
       <section className="relative w-full h-screen overflow-hidden bg-black">
-        {/* Base steel canvas */}
+        {/* Sunlit stone architecture */}
         <img
           src={heroImg}
-          alt="Ivory STILL — A CoppahandGold Morning poster mounted on a brushed steel and concrete gallery wall"
+          alt="Warm afternoon light crossing travertine arches in a quiet architectural interior"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.9) saturate(0.72) contrast(1.06)" }}
+          style={{ filter: "brightness(0.88) saturate(0.82) contrast(1.06)" }}
         />
 
 

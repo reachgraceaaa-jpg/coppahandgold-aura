@@ -63,7 +63,7 @@ const Index = () => {
       {/* Who this is for */}
       <section className="grid md:grid-cols-2 min-h-[660px]">
         <div className="relative overflow-hidden min-h-[420px]">
-          <img src={womanBack} alt="Woman from behind in an architectural space" loading="lazy" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.55) saturate(0.72) contrast(0.92)", transform: "scale(1.05)", transformOrigin: "center center" }} />
+          <img src={womanBack} alt="Woman from behind in an architectural space" loading="lazy" className="absolute inset-0 w-full h-full object-cover" style={{ filter: "brightness(0.48) saturate(0.72) contrast(1.08)", transform: "scale(1.05)", transformOrigin: "center center" }} />
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(198,178,155,0.18), transparent 55%, hsl(var(--background)) 100%)" }} />
           <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 30% 50%, transparent 30%, hsl(220 8% 8% / 0.62) 100%)" }} />
         </div>
@@ -92,23 +92,23 @@ const Index = () => {
       </section>
       <section className="grid grid-cols-1 md:grid-cols-3">
         {pillars.map((p) => (
-          <article key={p.tag} className="group relative h-[520px] overflow-hidden border border-transparent hover:border-primary/40 transition-all duration-700">
-            <img
-              src={p.img}
-              alt={p.tag}
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover transition-all duration-[1200ms] group-hover:scale-[1.04]"
-              style={{ filter: "brightness(0.32) saturate(0.55)" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 50% 110%, rgba(198,178,155,0.18), transparent 55%)" }} />
-            <div className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" style={{ background: "hsl(220 8% 8% / 0.28)" }} />
-            <div className="absolute left-9 right-9 bottom-9">
-              <div className="label-teal mb-4">{p.tag}</div>
-              <h3 className="serif italic-serif text-foreground mb-4" style={{ fontWeight: 300, fontSize: "clamp(1.5rem, 2vw, 1.9rem)", lineHeight: 1.15 }}>
+          <article key={p.tag} className="group border border-border/70 transition-colors duration-500 hover:border-primary/50">
+            <div className="relative h-[340px] md:h-[390px] overflow-hidden border-b border-border/70">
+              <img
+                src={p.img}
+                alt={p.tag}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
+                style={{ filter: "brightness(0.48) saturate(0.62) contrast(1.04)" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
+            </div>
+            <div className="px-7 py-6 md:px-8 md:py-7">
+              <div className="label-teal mb-3">{p.tag}</div>
+              <h3 className="serif italic-serif text-foreground mb-3" style={{ fontWeight: 300, fontSize: "clamp(1.35rem, 1.8vw, 1.65rem)", lineHeight: 1.15 }}>
                 {p.h}
               </h3>
-              <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.82rem", lineHeight: 1.7 }}>
+              <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.78rem", lineHeight: 1.7 }}>
                 {p.p}
               </p>
             </div>
@@ -135,7 +135,11 @@ const Index = () => {
         </div>
       </section>
 
-      <WaitlistSection />
+      <WaitlistSection
+        phonePlaceholder="Phone Number (Optional)"
+        submitLabel="JOIN THE WAITLIST"
+        successMessage="Details received. You will be notified when the next room opens."
+      />
       <Footer />
     </main>
   );
