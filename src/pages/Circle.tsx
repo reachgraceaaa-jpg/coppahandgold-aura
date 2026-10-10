@@ -145,9 +145,6 @@ const Circle = () => {
             <br />
             <span className="italic-serif text-primary">The locations change. The themes shift. The caliber remains absolute.</span>
           </h2>
-          <p className="muted-text" style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "0.92rem", lineHeight: 1.95 }}>
-            One considered gathering each month, shaped around the women in the room and what they are building.
-          </p>
         </div>
       </section>
 
