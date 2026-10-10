@@ -25,13 +25,12 @@ const events: EventCard[] = [
     accent: "mauve",
   },
   {
-    status: "live",
-    name: "Still",
+    status: "experienced",
+    name: "STILL",
     description: "A closed-door morning experience built around four elements of human alignment — Fire, Air, Water, Earth — engineered for total nervous system decompression. No performance. Just reset.",
-    details: "September 2026 · Abuja · 15 Women · By Reservation",
+    details: "September 2026 · Abuja · 15 Women · Sold Out",
     tags: ["Barre", "Yin Yoga", "Lymphatic Drainage", "Nourishment"],
     accent: "teal",
-    ticketUrl: "https://selar.com/2oc15eky63",
   },
   {
     status: "soon",
