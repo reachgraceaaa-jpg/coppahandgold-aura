@@ -27,7 +27,7 @@ const forTheKindOfWoman = [
 const rhythm = [
   {
     h: "Founders Roundtable",
-    p: "Working through real problems together: how to grow, what is stuck, and what it takes to scale.",
+    p: "working through real problems together: how to grow, what is stuck, and what it takes to scale.",
   },
   {
     h: "Capital & Ventures",
