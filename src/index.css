@@ -42,6 +42,7 @@
 
     --gradient-steel: linear-gradient(135deg, hsl(214 8% 19%) 0%, hsl(210 6% 13%) 48%, hsl(214 9% 22%) 100%);
     --shadow-steel: 0 24px 60px -30px hsl(220 20% 2% / 0.9);
+    --hero-natural-shade: linear-gradient(180deg, hsl(var(--background) / 0.16) 0%, hsl(var(--background) / 0.02) 32%, hsl(var(--background) / 0.56) 76%, hsl(var(--background)) 100%);
 
     --radius: 0.25rem;
   }
@@ -91,11 +92,17 @@
     color: hsl(210 12% 94% / 0.55);
   }
   .brand-mark {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    letter-spacing: 0.42em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: hsl(var(--primary));
+  }
+  .hero-natural-photo {
+    filter: saturate(0.92) contrast(0.96);
+  }
+  .hero-natural-shade {
+    background: var(--hero-natural-shade);
   }
   /* Brushed steel surface for cards / sectional wrappers */
   .steel-surface {

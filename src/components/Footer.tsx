@@ -11,7 +11,7 @@ const Footer = ({ hideCalendar = false }: { hideCalendar?: boolean }) => (
       </p>
       {!hideCalendar && <Link to="/events" className="ghost-link">View experience calendar →</Link>}
     </div>
-    <div className="mt-10 text-center text-xs muted-text tracking-[0.22em] uppercase">
+    <div className="brand-mark mt-10 text-center text-xs">
       coppahandgold.org
     </div>
   </footer>

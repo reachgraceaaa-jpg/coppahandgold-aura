@@ -1,45 +1,26 @@
 import { useState } from "react";
 import heroImg from "@/assets/hero-1.jpg";
 import MonthCalendar from "./MonthCalendar";
+import { Button } from "./ui/button";
 
 const TAGLINE = "STILL — A COPPAHANDGOLD MORNING";
-// Fixed burgundy ACCENT — no color cycling
-const ACCENT = "#9a5b64";
-const ACCENT_DEEP = "#562429";
 
 const HeroSlideshow = () => {
   const [showCalendar, setShowCalendar] = useState(false);
 
   return (
     <>
-      <section className="relative w-full h-screen overflow-hidden bg-black">
+      <section className="relative w-full h-screen overflow-hidden bg-background">
         {/* Sunlit stone architecture */}
         <img
           src={heroImg}
           alt="Warm afternoon light crossing travertine arches in a quiet architectural interior"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.88) saturate(0.82) contrast(1.06)" }}
+          className="hero-natural-photo absolute inset-0 w-full h-full object-cover"
         />
 
-
-        {/* Static soft burgundy sheen */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 25%, rgba(154,91,100,0.12) 0%, transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(86,36,41,0.20) 0%, transparent 55%)",
-            mixBlendMode: "screen",
-          }}
-        />
 
         {/* Bottom vignette to anchor type */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(180deg, hsl(220 8% 8% / 0.62) 0%, hsl(220 8% 8% / 0.10) 32%, hsl(220 8% 8% / 0.82) 76%, hsl(220 8% 8%) 100%)",
-          }}
-        />
+        <div className="hero-natural-shade absolute inset-0 pointer-events-none" />
 
 
         {/* Static content — locked, no slide */}
@@ -53,21 +34,9 @@ const HeroSlideshow = () => {
             <span className="italic-serif">change you.</span>
           </h1>
 
-          {/* Tagline — static text, color cycles with phase */}
-          <div
-            className="mb-8"
-            style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
-          >
-            <span
-              className="inline-block uppercase"
-              style={{
-                fontSize: "0.68rem",
-                letterSpacing: "0.32em",
-                color: ACCENT,
-                transition: "color 1500ms ease",
-                whiteSpace: "nowrap",
-              }}
-            >
+          {/* Brand line shares the site wordmark typography. */}
+          <div className="mb-8">
+            <span className="brand-mark inline-block text-[0.68rem] leading-relaxed">
               {TAGLINE}
             </span>
           </div>
@@ -79,55 +48,25 @@ const HeroSlideshow = () => {
             We curate the ones worth being in.
           </p>
           <div className="flex flex-wrap items-center gap-6 md:gap-8">
-            <a
-              href="https://selar.com/2oc15eky63"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer uppercase"
-              style={{
-                fontFamily: "Jost",
-                fontWeight: 400,
-                fontSize: "0.72rem",
-                letterSpacing: "0.24em",
-                padding: "14px 28px",
-                color: "#f4e9e6",
-                background: ACCENT_DEEP,
-                border: `1px solid ${ACCENT}`,
-                boxShadow: `0 0 0 1px ${ACCENT}33, 0 0 32px ${ACCENT}66, inset 0 0 18px ${ACCENT}22`,
-                transition: "box-shadow 300ms ease, transform 300ms ease",
-              }}
-            >
-              Join STILL
-            </a>
-            <button
+            <Button
+              variant="outline"
               type="button"
               onClick={() => {
                 const el = document.getElementById("waitlist");
                 if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
               }}
-              className="cursor-pointer uppercase"
-              style={{
-                fontFamily: "Jost",
-                fontWeight: 400,
-                fontSize: "0.72rem",
-                letterSpacing: "0.24em",
-                padding: "14px 28px",
-                color: "hsl(var(--foreground))",
-                background: "transparent",
-                border: `1px solid ${ACCENT}`,
-                boxShadow: `0 0 0 1px ${ACCENT}22, 0 0 28px ${ACCENT}55, inset 0 0 18px ${ACCENT}1a`,
-                transition: "border-color 1500ms ease, box-shadow 1500ms ease, color 1500ms ease",
-              }}
+              className="btn-teal-outline h-auto rounded-none cursor-pointer"
             >
               Join
-            </button>
-            <button
+            </Button>
+            <Button
+              variant="link"
               type="button"
               onClick={() => setShowCalendar((v) => !v)}
-              className="ghost-link"
+              className="ghost-link h-auto px-0 font-light no-underline hover:no-underline"
             >
               {showCalendar ? "Hide Calendar ↑" : "See What's Coming ↓"}
-            </button>
+            </Button>
           </div>
         </div>
       </section>
