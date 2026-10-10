@@ -11,6 +11,7 @@ interface Props {
   disclaimer?: string;
   successMessage?: string;
   extraFieldPlaceholder?: string;
+  phonePlaceholder?: string;
 }
 
 const WaitlistSection = ({
@@ -22,6 +23,7 @@ const WaitlistSection = ({
   disclaimer = "No noise. Just the rooms worth knowing about.",
   successMessage,
   extraFieldPlaceholder,
+  phonePlaceholder = "Phone Number",
 }: Props) => {
   const [form, setForm] = useState({ first: "", last: "", email: "", phone: "", industry: "" });
   const [submitting, setSubmitting] = useState(false);
@@ -86,7 +88,7 @@ const WaitlistSection = ({
             <input className="input-dark" placeholder="First Name" value={form.first} onChange={(e) => setForm({ ...form, first: e.target.value })} />
             <input className="input-dark" placeholder="Last Name" value={form.last} onChange={(e) => setForm({ ...form, last: e.target.value })} />
             <input className="input-dark md:col-span-2" type="email" placeholder="Email Address" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-            <input className="input-dark md:col-span-2" placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
+            <input className="input-dark md:col-span-2" placeholder={phonePlaceholder} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
             {extraFieldPlaceholder && (
               <input className="input-dark md:col-span-2" placeholder={extraFieldPlaceholder} value={form.industry} onChange={(e) => setForm({ ...form, industry: e.target.value })} />
             )}
