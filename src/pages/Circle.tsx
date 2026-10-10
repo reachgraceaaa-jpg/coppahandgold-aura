@@ -58,7 +58,7 @@ const Circle = () => {
     if (meta) {
       meta.setAttribute(
         "content",
-        "Circle by CoppahandGold — a twice-monthly private fixture for exceptional women. 1st and 3rd Friday of every month. Capped at 15–20 entries."
+        "Circle by CoppahandGold — a monthly private gathering for women building businesses, capital, wellbeing, and meaningful connections."
       );
     }
   }, []);
@@ -87,7 +87,7 @@ const Circle = () => {
           src={circleHero}
           alt="Macro photograph of ivory linen folds in deep shadow"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ filter: "brightness(0.72) contrast(1.02) saturate(0.92)" }}
+        style={{ filter: "brightness(0.72) contrast(1.06) saturate(0.88)" }}
         />
         <div
           className="absolute inset-0 pointer-events-none"
@@ -198,7 +198,7 @@ const Circle = () => {
               <div
                 key={r.h}
                 className="grid md:grid-cols-[1fr_1.4fr] gap-3 md:gap-14 py-7 md:py-9 px-5 md:px-10 reveal"
-                style={{ background: "hsl(var(--background))", transitionDelay: `${i * 80}ms` }}
+                style={{ background: i % 2 === 0 ? "linear-gradient(115deg, hsl(var(--card) / 0.78), hsl(var(--background)))" : "hsl(var(--background))", transitionDelay: `${i * 80}ms` }}
               >
                 <h3 className="serif text-primary" style={{ fontWeight: 300, fontSize: "clamp(1.3rem, 2vw, 1.7rem)", lineHeight: 1.2 }}>
                   {r.h}

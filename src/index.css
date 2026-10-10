@@ -207,18 +207,20 @@
   .circle-anchor {
     width: calc(100% - 2.5rem);
     margin-top: -2.5rem;
+    margin-inline: auto;
     transition: width 800ms cubic-bezier(0.22, 1, 0.36, 1), margin-top 800ms cubic-bezier(0.22, 1, 0.36, 1);
     background: hsl(var(--background));
   }
   .circle-anchor.is-expanded {
     width: 100%;
     margin-top: -2.5rem;
+    margin-inline: auto;
   }
 }
 
 @media (min-width: 768px) {
-  .circle-anchor { width: calc(100% - 5rem); margin-top: -4rem; }
-  .circle-anchor.is-expanded { width: 100%; margin-top: -4rem; }
+  .circle-anchor { width: calc(100% - 5rem); margin-top: -4rem; margin-inline: auto; }
+  .circle-anchor.is-expanded { width: 100%; margin-top: -4rem; margin-inline: auto; }
 }
 
 @keyframes tealPulse {
