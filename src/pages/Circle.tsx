@@ -234,7 +234,7 @@ const Circle = () => {
         subline="Entries are reviewed for alignment. If the room is right for you, we'll reach out with the next convening."
         extraFieldPlaceholder="Industry / What Are You Building?"
         submitLabel="SUBMIT"
-        disclaimer="No noise. Just the rooms worth being."
+        disclaimer="No noise. Just rooms worth being."
         phonePlaceholder="Phone Number"
         successMessage="Welcome to Circle. We'll be in touch."
       />
