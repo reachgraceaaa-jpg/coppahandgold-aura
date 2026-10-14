@@ -3,8 +3,6 @@ import heroImg from "@/assets/hero-1.jpg";
 import MonthCalendar from "./MonthCalendar";
 import { Button } from "./ui/button";
 
-const TAGLINE = "STILL — A COPPAHANDGOLD MORNING";
-
 const HeroSlideshow = () => {
   const [showCalendar, setShowCalendar] = useState(false);
 
@@ -34,15 +32,8 @@ const HeroSlideshow = () => {
             <span className="italic-serif">change you.</span>
           </h1>
 
-          {/* Brand line shares the site wordmark typography. */}
-          <div className="mb-8">
-            <span className="brand-mark inline-block text-[0.68rem] leading-relaxed">
-              {TAGLINE}
-            </span>
-          </div>
-
           <p
-            className="muted-text mb-10 max-w-md"
+            className="muted-text mb-8 max-w-md"
             style={{ fontFamily: "Jost", fontWeight: 200, fontSize: "0.9rem" }}
           >
             We curate the ones worth being in.
